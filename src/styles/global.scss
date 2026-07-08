@@ -1,0 +1,29 @@
+@use "./variables" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $body-font;
+  background: $secondary;
+  color: $text;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: $title-font;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}

@@ -1,0 +1,258 @@
+.hero {
+  position: relative;
+
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+
+  isolation: isolate;
+}
+
+.hero::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.55)),
+    radial-gradient(
+      circle at center,
+      rgba(255, 255, 255, 0.15),
+      rgba(255, 255, 255, 0.65)
+    );
+
+  backdrop-filter: blur(4px);
+
+  z-index: 1;
+}
+
+.hero__content {
+  position: relative;
+
+  z-index: 5;
+
+  width: min(92%, 760px);
+
+  text-align: center;
+
+  padding: 30px;
+}
+
+.hero__invite {
+  display: inline-block;
+
+  margin-bottom: 35px;
+
+  text-transform: uppercase;
+
+  font-size: 13px;
+
+  letter-spacing: 6px;
+
+  color: #9d7b53;
+}
+
+.hero__names {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 14px;
+
+  font-family: "Parfumerie Script";
+
+  font-size: clamp(68px, 8vw, 120px);
+
+  line-height: 0.92;
+
+  color: #3b2a1c;
+
+  text-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.hero__names span {
+  color: #b58a56;
+  font-size: 0.55em;
+}
+
+.hero__dateCard {
+  margin: 60px auto 0;
+
+  width: 250px;
+
+  padding: 18px 25px;
+
+  background: rgba(255, 255, 255, 0.82);
+
+  backdrop-filter: blur(20px);
+
+  border-radius: 22px;
+
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.08);
+
+  border: 1px solid rgba(182, 138, 84, 0.18);
+
+  text-align: center;
+}
+
+.hero__month {
+  font-size: 13px;
+
+  letter-spacing: 4px;
+
+  text-transform: uppercase;
+
+  color: #8d6f45;
+
+  margin-bottom: 10px;
+}
+
+.hero__middle {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 18px;
+}
+
+.hero__day {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 74px;
+
+  line-height: 1;
+
+  color: #2d2115;
+}
+
+.hero__year {
+  position: relative;
+
+  padding-left: 18px;
+
+  font-size: 18px;
+
+  color: #8d6f45;
+}
+
+.hero__year::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 1px;
+
+  height: 42px;
+
+  background: #cdb18d;
+}
+
+.hero__weekday {
+  margin-top: 12px;
+
+  letter-spacing: 5px;
+
+  text-transform: uppercase;
+
+  font-size: 13px;
+
+  color: #4c3a25;
+}
+
+.hero__scroll {
+  margin: 70px auto 0;
+
+  width: 56px;
+
+  height: 56px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  border-radius: 50%;
+
+  background: white;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+
+  font-size: 20px;
+
+  color: #b68a54;
+
+  cursor: pointer;
+
+  transition: 0.35s;
+}
+
+.hero__scroll:hover {
+  transform: translateY(-4px);
+}
+
+.hero__flower {
+  position: absolute;
+
+  z-index: 3;
+
+  pointer-events: none;
+
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.08));
+}
+
+.hero__flower--top {
+  top: 0;
+  left: 0;
+
+  width: 360px;
+}
+
+.hero__flower--bottom {
+  right: 0;
+  bottom: 0;
+
+  width: 360px;
+
+  transform: rotate(180deg);
+}
+
+@media (max-width: 768px) {
+  .hero__flower--top {
+    width: 180px;
+  }
+
+  .hero__flower--bottom {
+    width: 180px;
+  }
+}
+.hero__scroll {
+  cursor: pointer;
+}
+.hero__bg {
+  position: absolute;
+  inset: 0;
+
+  background: url("../../assets/images/hero-bg.jpg") center/cover;
+
+  transform: scale(1.08);
+
+  z-index: 0;
+}
+.hero {
+  transform-origin: center;
+
+  will-change: transform;
+}

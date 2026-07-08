@@ -1,0 +1,37 @@
+.navbar {
+  width: 100%;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .08);
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 18px 20px;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.admin-btn {
+  padding: 10px 18px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #b76e79;
+  color: white;
+
+  transition: .3s;
+}
+
+.admin-btn:hover {
+  transform: translateY(-2px);
+}

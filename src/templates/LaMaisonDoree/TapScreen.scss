@@ -1,0 +1,77 @@
+.tap-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+
+  background: url("../../assets/images/hero-bg.jpg") center/cover;
+}
+
+.tap-screen__overlay {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(10px);
+}
+
+.tap-screen__content {
+  position: relative;
+  z-index: 2;
+
+  text-align: center;
+}
+
+.tap-screen__subtitle {
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #a58357;
+  font-size: 13px;
+}
+
+.tap-screen h1 {
+  margin: 35px 0;
+
+  display: flex;
+  flex-direction: column;
+
+  font-size: 74px;
+
+  color: #3d2c18;
+
+  font-family: "Cormorant Garamond", serif;
+}
+
+.tap-screen h1 span {
+  font-size: 42px;
+  color: #b68a54;
+}
+
+.tap-screen__circle {
+  width: 90px;
+  height: 90px;
+
+  margin: 50px auto;
+
+  border-radius: 50%;
+
+  border: 2px solid #b68a54;
+}
+
+.tap-screen p {
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #8b6d44;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .tap-screen h1 {
+    font-size: 54px;
+  }
+}

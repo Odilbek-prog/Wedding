@@ -1,0 +1,221 @@
+.rsvp {
+  padding: 130px 20px;
+  background: #faf8f5;
+}
+
+.rsvp__card {
+  position: relative;
+
+  max-width: 720px;
+
+  margin: auto;
+
+  padding: 85px 50px;
+
+  border-radius: 34px;
+
+  background: rgba(255, 255, 255, 0.82);
+
+  backdrop-filter: blur(18px);
+
+  text-align: center;
+
+  overflow: hidden;
+
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.08);
+}
+
+.rsvp__card::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 12px;
+
+  border: 1px solid rgba(182, 138, 84, 0.18);
+
+  border-radius: 28px;
+
+  pointer-events: none;
+}
+
+.rsvp__subtitle {
+  display: block;
+
+  margin-bottom: 18px;
+
+  letter-spacing: 5px;
+
+  font-size: 12px;
+
+  text-transform: uppercase;
+
+  color: #b68a54;
+}
+
+.rsvp h2 {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 68px;
+
+  font-weight: 500;
+
+  color: #3c2b1c;
+
+  margin-bottom: 45px;
+}
+
+.rsvp input,
+.rsvp textarea {
+  width: 100%;
+
+  margin-bottom: 20px;
+
+  padding: 18px 24px;
+
+  border: none;
+
+  outline: none;
+
+  border-radius: 18px;
+
+  background: #fff;
+
+  font-size: 16px;
+
+  color: #4a3a2a;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+
+  transition: 0.35s;
+}
+
+.rsvp input:focus,
+.rsvp textarea:focus {
+  transform: translateY(-2px);
+
+  box-shadow: 0 15px 35px rgba(182, 138, 84, 0.18);
+}
+
+.rsvp textarea {
+  height: 170px;
+
+  resize: none;
+}
+
+.rsvp button {
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+
+  width: 330px;
+
+  max-width: 100%;
+
+  height: 62px;
+
+  border: none;
+
+  cursor: pointer;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 14px;
+
+  background: #31543e;
+
+  color: white;
+
+  font-size: 15px;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+
+  font-weight: 600;
+
+  clip-path: polygon(8% 0, 92% 0, 100% 50%, 92% 100%, 8% 100%, 0 50%);
+
+  transition: 0.35s;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+.rsvp button::before {
+  content: "";
+
+  position: absolute;
+
+  left: -120%;
+
+  top: 0;
+
+  width: 60%;
+
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.35),
+    transparent
+  );
+
+  transition: 0.8s;
+}
+
+.rsvp button:hover::before {
+  left: 140%;
+}
+
+.rsvp button:hover {
+  transform: translateY(-4px);
+
+  box-shadow: 0 18px 40px rgba(49, 84, 62, 0.28);
+}
+
+.rsvp__flower {
+  position: absolute;
+
+  width: 200px;
+
+  pointer-events: none;
+}
+
+.rsvp__flower--left {
+  left: -80px;
+  bottom: -80px;
+}
+
+.rsvp__flower--right {
+  right: -80px;
+  bottom: -50px;
+}
+
+@media (max-width: 768px) {
+  .rsvp {
+    padding: 90px 18px;
+  }
+
+  .rsvp__card {
+    padding: 60px 22px;
+  }
+
+  .rsvp h2 {
+    font-size: 48px;
+  }
+
+  .rsvp button {
+    height: 58px;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+  }
+}
