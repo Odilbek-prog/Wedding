@@ -26,7 +26,12 @@ function PhonePreview({ open, onClose, children }) {
             ✕
           </button>
 
-          <div className="phone-preview__screen">{children}</div>
+          <div
+            className="phone-preview__screen"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {children}
+          </div>
         </motion.div>
       </motion.div>
     </AnimatePresence>

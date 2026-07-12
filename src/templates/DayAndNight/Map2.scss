@@ -1,0 +1,155 @@
+.map2 {
+  padding: 130px 20px;
+
+  background: linear-gradient(180deg, #8d8f71 0%, #848768 100%);
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+}
+
+.map2__card {
+  width: min(460px, 92vw);
+
+  background: #fdfbf7;
+
+  border-radius: 42px;
+
+  padding: 42px;
+
+  text-align: center;
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.15),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.8);
+
+  transition: 0.4s;
+}
+
+.map2__card:hover {
+  transform: translateY(-8px);
+}
+
+.map2__subtitle {
+  display: block;
+
+  font-family: "Monsieur La Doulaise", cursive;
+
+  font-size: 46px;
+
+  color: #70714f;
+
+  margin-bottom: 10px;
+}
+
+.map2 h2 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 42px;
+
+  font-weight: 600;
+
+  color: #4f4a39;
+
+  text-transform: uppercase;
+
+  letter-spacing: 2px;
+
+  line-height: 1.15;
+}
+
+.map2__divider {
+  width: 90px;
+
+  height: 1px;
+
+  background: #b8b089;
+
+  margin: 26px auto;
+}
+
+.map2__time {
+  margin-bottom: 32px;
+
+  color: #868163;
+
+  font-size: 17px;
+
+  letter-spacing: 1px;
+}
+
+.map2__image {
+  width: 100%;
+
+  border-radius: 26px;
+
+  display: block;
+
+  margin-bottom: 35px;
+
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+
+  transition: 0.5s;
+}
+
+.map2__button {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 10px;
+
+  width: 100%;
+
+  height: 58px;
+
+  border-radius: 18px;
+
+  text-decoration: none;
+
+  color: white;
+
+  font-weight: 600;
+
+  background: linear-gradient(180deg, #7d7f5b, #666848);
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+
+  transition: 0.35s;
+}
+
+.map2__button:hover {
+  transform: translateY(-4px);
+
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 768px) {
+  .map2 {
+    padding: 90px 18px;
+  }
+
+  .map2__card {
+    padding: 32px 24px;
+
+    border-radius: 30px;
+  }
+
+  .map2__subtitle {
+    font-size: 38px;
+  }
+
+  .map2 h2 {
+    font-size: 32px;
+  }
+
+  .map2__button {
+    height: 54px;
+  }
+}

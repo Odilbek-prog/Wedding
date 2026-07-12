@@ -1,0 +1,168 @@
+.countdown2 {
+  position: relative;
+
+  padding: 130px 20px;
+
+  background: #8e9174;
+
+  overflow: hidden;
+}
+
+.countdown2::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.05), transparent 55%),
+    linear-gradient(rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.03));
+
+  opacity: 0.8;
+
+  pointer-events: none;
+}
+
+.countdown2__inner {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 1000px;
+
+  margin: auto;
+
+  text-align: center;
+}
+
+.countdown2__ornament {
+  color: #ead7a8;
+
+  font-size: 18px;
+
+  letter-spacing: 10px;
+
+  margin-bottom: 20px;
+}
+
+.countdown2__script {
+  display: block;
+
+  font-family: "Monsieur La Doulaise", cursive;
+
+  font-size: 72px;
+
+  color: white;
+
+  margin-bottom: 10px;
+}
+
+.countdown2 h2 {
+  max-width: 500px;
+
+  margin: auto auto 70px;
+
+  color: rgba(255, 255, 255, 0.9);
+
+  font-size: 15px;
+
+  font-weight: 400;
+
+  letter-spacing: 4px;
+
+  line-height: 1.8;
+}
+
+.countdown2__grid {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 25px;
+
+  flex-wrap: wrap;
+}
+
+.countdown2__item {
+  min-width: 120px;
+}
+
+.countdown2__item h3 {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 72px;
+
+  font-weight: 500;
+
+  color: white;
+
+  line-height: 1;
+
+  margin-bottom: 14px;
+
+  text-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.countdown2__item span {
+  display: block;
+
+  color: #ead7a8;
+
+  font-size: 13px;
+
+  letter-spacing: 3px;
+}
+
+.countdown2__divider {
+  width: 1px;
+
+  height: 95px;
+
+  background: rgba(234, 215, 168, 0.35);
+}
+
+.countdown2__bottom {
+  width: 140px;
+
+  height: 1px;
+
+  margin: 70px auto 0;
+
+  background: rgba(234, 215, 168, 0.45);
+}
+
+@media (max-width: 768px) {
+  .countdown2 {
+    padding: 90px 20px;
+  }
+
+  .countdown2__script {
+    font-size: 56px;
+  }
+
+  .countdown2 h2 {
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 50px;
+  }
+
+  .countdown2__grid {
+    gap: 18px;
+  }
+
+  .countdown2__item {
+    min-width: 130px;
+  }
+
+  .countdown2__item h3 {
+    font-size: 52px;
+  }
+
+  .countdown2__divider {
+    display: none;
+  }
+}

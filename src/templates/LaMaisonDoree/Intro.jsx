@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 import "./Intro.scss";
 
-function Intro({ invitation, opened, onOpen }) {
+function Intro({ invitation, opened, onOpen, preview }) {
   return (
     <motion.section
-      className="intro"
+      className={`intro ${preview ? "intro--preview" : ""}`}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}

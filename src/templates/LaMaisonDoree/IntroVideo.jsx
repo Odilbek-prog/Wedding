@@ -4,7 +4,7 @@ import "./IntroVideo.scss";
 import poster from "../../assets/images/poster.png";
 import introVideo from "../../assets/videos/intro.mp4";
 
-function IntroVideo({ onFinish }) {
+function IntroVideo({ onFinish, preview }) {
   const videoRef = useRef(null);
 
   const [started, setStarted] = useState(false);
@@ -19,7 +19,7 @@ function IntroVideo({ onFinish }) {
 
   return (
     <motion.section
-      className="intro-video"
+      className={`intro-video ${preview ? "intro-video--preview" : ""}`}
       onClick={startVideo}
       initial={{ opacity: 1 }}
       animate={{ opacity: 1 }}
