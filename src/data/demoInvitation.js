@@ -9,7 +9,6 @@ const demoInvitation = {
   music: "/music/music.mp3",
   venue: "The Peninsula Hotel Istanbul",
   address: "Azapkapı, Kemankeş Cd. No:11, İstanbul",
-  map: "https://maps.google.com/...",
 };
 
 export default demoInvitation;

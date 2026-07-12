@@ -1,5 +1,5 @@
 import template1 from "../assets/images/template1.jpg";
-import template2 from "../assets/images/template2.webp";
+import dayNight from "../assets/images/template2.webp";
 import template3 from "../assets/images/template3.webp";
 import template4 from "../assets/images/template4.webp";
 import template5 from "../assets/images/template5.webp";
@@ -13,15 +13,15 @@ const templates = [
   },
   {
     id: 2,
-    name: "Teatro",
-    image: template2,
-    component: "teatro",
+    name: "Day & Night",
+    image: dayNight,
+    component: "day-and-night",
   },
   {
     id: 3,
-    name: "Majestic",
+    name: "Bloom",
     image: template3,
-    component: "majestic",
+    component: "bloom",
   },
   {
     id: 4,

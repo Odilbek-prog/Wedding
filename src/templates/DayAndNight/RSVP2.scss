@@ -1,0 +1,160 @@
+.rsvp2 {
+  position: relative;
+  padding: 120px 22px;
+  background: #d0c6b0;
+  overflow: hidden;
+}
+
+.rsvp2::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top, #d0c6b0, transparent 60%),
+    url("../../assets/images/pattern.png");
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+.rsvp2__card {
+  max-width: 560px;
+  margin: auto;
+}
+
+.rsvp2__image {
+  width: 100%;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+.rsvp2 h2 {
+  text-align: center;
+  font-family: "Monsieur La Doulaise", cursive;
+  font-size: 72px;
+  color: #73684d;
+  font-weight: 400;
+  margin-left: -35px;
+}
+
+.rsvp2__subtitle {
+  text-align: center;
+  margin: -6px 0 45px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-size: 13px;
+  color: #9f9477;
+}
+
+.rsvp2__form {
+  background: #d0c6b0;
+  backdrop-filter: blur(16px);
+
+  border-radius: 38px;
+
+  padding: 40px;
+
+  border: 1px solid rgba(182, 170, 136, 0.22);
+
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.08),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.45);
+}
+
+.rsvp2 input,
+.rsvp2 textarea {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: #f5eedf;
+
+  border-radius: 20px;
+
+  padding: 20px 22px;
+
+  margin-bottom: 20px;
+
+  font-size: 16px;
+  color: #6d6347;
+
+  box-shadow:
+    inset 0 0 0 1px rgba(181, 170, 136, 0.25),
+    0 10px 25px rgba(0, 0, 0, 0.04);
+
+  transition: 0.35s;
+}
+
+.rsvp2 textarea {
+  resize: none;
+  height: 170px;
+}
+
+.rsvp2 input::placeholder,
+.rsvp2 textarea::placeholder {
+  color: #b4aa91;
+}
+
+.rsvp2 input:focus,
+.rsvp2 textarea:focus {
+  box-shadow:
+    inset 0 0 0 1px #908765,
+    0 18px 35px rgba(0, 0, 0, 0.08);
+
+  transform: translateY(-2px);
+}
+
+.rsvp2 button {
+  width: 100%;
+  border: none;
+  cursor: pointer;
+
+  padding: 21px;
+
+  border-radius: 999px;
+
+  background: linear-gradient(180deg, #8e8a69, #767257);
+
+  color: #fff;
+
+  text-transform: uppercase;
+  letter-spacing: 4px;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  transition: 0.35s;
+
+  box-shadow: 0 18px 35px rgba(72, 69, 48, 0.28);
+}
+
+.rsvp2 button:hover {
+  transform: translateY(-4px);
+
+  background: linear-gradient(180deg, #9c9875, #807c5d);
+
+  box-shadow: 0 25px 45px rgba(72, 69, 48, 0.35);
+}
+
+@media (max-width: 768px) {
+  .rsvp2 {
+    padding: 90px 18px;
+  }
+
+  .rsvp2 h2 {
+    font-size: 60px;
+  }
+
+  .rsvp2__subtitle {
+    letter-spacing: 3px;
+    font-size: 11px;
+  }
+
+  .rsvp2__form {
+    padding: 28px;
+    border-radius: 30px;
+  }
+
+  .rsvp2 input,
+  .rsvp2 textarea {
+    padding: 18px;
+  }
+}

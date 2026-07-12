@@ -1,0 +1,266 @@
+.map3 {
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 0 20px 90px;
+
+  background: #b3b686;
+
+  display: flex;
+
+  justify-content: center;
+}
+
+.map3__flowers {
+  position: absolute;
+
+  left: auto;
+
+  width: 430px;
+
+  pointer-events: none;
+
+  user-select: none;
+
+  z-index: 3;
+}
+
+.map3__card {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(430px, 100%);
+
+  margin-top: 120px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.map3__frame {
+  width: 100%;
+
+  background: url("../../assets/images/mapbg.png") center/100% 100% no-repeat;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  text-align: center;
+
+  padding: 85px 52px 35px;
+}
+
+/* ======================
+        TITLE
+====================== */
+
+.map3__subtitle {
+  font-family: "Monsieur La Doulaise", cursive;
+
+  font-size: 52px;
+
+  line-height: 0.9;
+
+  color: #4f4532;
+
+  margin-bottom: 18px;
+  margin-top: 100px;
+}
+
+.map3__small {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 11px;
+
+  letter-spacing: 5px;
+
+  color: #8c7d5b;
+
+  margin-bottom: 22px;
+}
+
+.map3 h2 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 44px;
+
+  line-height: 1.05;
+
+  font-weight: 600;
+
+  color: #5a4e37;
+
+  text-transform: uppercase;
+}
+
+.map3__date {
+  margin-top: 28px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 19px;
+
+  color: #75694f;
+
+  font-style: italic;
+}
+
+.map3__time {
+  margin-top: 10px;
+
+  font-size: 30px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-weight: 700;
+
+  color: #3f3627;
+}
+
+.map3__address {
+  margin-top: 20px;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+
+  color: #8c7d5b;
+}
+
+/* ======================
+        IMAGE
+====================== */
+
+.map3__venue {
+  width: 118%;
+
+  margin-top: 35px;
+
+  transition: 0.6s;
+}
+
+.map3__venue:hover {
+  transform: scale(1.04);
+}
+
+/* ======================
+        BUTTON
+====================== */
+
+.map3__button {
+  margin-top: 22px;
+
+  width: 100%;
+
+  max-width: 320px;
+
+  height: 58px;
+
+  border-radius: 999px;
+
+  background: linear-gradient(180deg, #7d8055, #62653f);
+
+  color: white;
+
+  text-decoration: none;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 12px;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.5px;
+
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.18);
+
+  transition: 0.35s;
+}
+
+.map3__button:hover {
+  transform: translateY(-4px);
+
+  box-shadow: 0 26px 45px rgba(0, 0, 0, 0.22);
+
+  background: linear-gradient(180deg, #898d60, #6d7047);
+}
+
+/* ======================
+      RESPONSIVE
+====================== */
+
+@media (max-width: 768px) {
+  .map3 {
+    padding: 0 15px 70px;
+  }
+
+  .map3__card {
+    width: 100%;
+
+    margin-top: 90px;
+  }
+  .map3__flowers {
+    width: 100%;
+    top: -10px;
+  }
+
+  .map3__frame {
+    padding: 65px 34px 28px;
+  }
+
+  .map3__subtitle {
+    font-size: 40px;
+  }
+
+  .map3__small {
+    font-size: 9px;
+
+    letter-spacing: 3px;
+  }
+
+  .map3 h2 {
+    font-size: 28px;
+  }
+
+  .map3__date {
+    margin-top: 20px;
+
+    font-size: 15px;
+  }
+
+  .map3__time {
+    font-size: 22px;
+  }
+
+  .map3__address {
+    font-size: 12px;
+  }
+
+  .map3__venue {
+    width: 120%;
+
+    margin-top: 26px;
+  }
+
+  .map3__button {
+    height: 52px;
+
+    font-size: 15px;
+  }
+}

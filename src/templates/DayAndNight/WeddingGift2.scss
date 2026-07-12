@@ -1,0 +1,199 @@
+.gift2 {
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 120px 20px;
+
+  background:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.08), transparent 60%),
+    #f8f5ef;
+}
+
+.gift2__wrapper {
+  max-width: 520px;
+
+  margin: auto;
+
+  text-align: center;
+}
+
+.gift2__title {
+  display: block;
+
+  font-family: "Monsieur La Doulaise", cursive;
+
+  font-size: 58px;
+
+  color: #72684b;
+
+  line-height: 1;
+}
+
+.gift2__subtitle {
+  margin-top: 10px;
+
+  margin-bottom: 36px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 4px;
+
+  font-size: 13px;
+
+  color: #a19779;
+}
+
+.gift2__card {
+  position: relative;
+
+  overflow: visible;
+
+  background: #fffdf9;
+
+  border-radius: 30px;
+
+  padding: 42px 34px 110px;
+
+  box-shadow:
+    0 22px 60px rgba(0, 0, 0, 0.08),
+    inset 0 0 0 1px rgba(132, 120, 84, 0.08);
+}
+
+.gift2__card::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 14px;
+
+  border-radius: 22px;
+
+  border: 1px solid rgba(120, 110, 80, 0.12);
+
+  pointer-events: none;
+}
+
+.gift2__text {
+  max-width: 340px;
+
+  margin: 0 auto 38px;
+
+  color: #7d755e;
+
+  font-size: 19px;
+
+  line-height: 1.9;
+}
+
+.gift2__method {
+  position: relative;
+
+  background: #fcfaf6;
+
+  border: 1px solid #e6dece;
+
+  border-radius: 18px;
+
+  padding: 24px;
+
+  text-align: left;
+}
+
+.gift2__methodHead {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 22px;
+}
+
+.gift2__methodHead span {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 30px;
+
+  color: #70684d;
+}
+
+.gift2__methodHead small {
+  padding: 4px 10px;
+
+  border-radius: 30px;
+
+  background: #e7e3d7;
+
+  color: #847a5a;
+
+  font-size: 11px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+}
+
+.gift2__methodText {
+  margin: 0;
+
+  color: #8a8268;
+
+  font-size: 16px;
+
+  line-height: 2;
+
+  text-align: left;
+}
+
+.gift2__flowers {
+  position: absolute;
+
+  left: 50%;
+
+  bottom: -80px;
+
+  transform: translateX(-50%);
+
+  width: 400px;
+
+  z-index: 20;
+
+  pointer-events: none;
+
+  user-select: none;
+}
+
+@media (max-width: 768px) {
+  .gift2 {
+    padding: 90px 18px;
+  }
+
+  .gift2__title {
+    font-size: 48px;
+  }
+
+  .gift2__subtitle {
+    font-size: 12px;
+
+    letter-spacing: 3px;
+  }
+
+  .gift2__card {
+    padding: 34px 22px 145px;
+
+    border-radius: 24px;
+  }
+
+  .gift2__text {
+    font-size: 17px;
+  }
+
+  .gift2__method {
+    padding: 18px;
+  }
+
+  .gift2__methodHead span {
+    font-size: 26px;
+  }
+}

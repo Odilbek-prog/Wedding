@@ -1,0 +1,197 @@
+.dress2 {
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 120px 20px;
+
+  background:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.08), transparent 60%),
+    #f8f5ef;
+}
+
+.dress2__container {
+  max-width: 520px;
+
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+.dress2__title {
+  display: block;
+
+  font-family: "Monsieur La Doulaise", cursive;
+
+  font-size: 58px;
+
+  color: #7a7154;
+
+  line-height: 1;
+}
+
+.dress2__subtitle {
+  margin-top: 12px;
+
+  margin-bottom: 34px;
+
+  font-size: 14px;
+
+  letter-spacing: 5px;
+
+  text-transform: uppercase;
+
+  color: #9a9172;
+}
+
+.dress2__image {
+  width: 100%;
+
+  max-width: 420px;
+
+  margin: 0 auto -70px;
+
+  display: block;
+
+  position: relative;
+
+  z-index: 5;
+
+  transition: 0.5s;
+}
+
+.dress2__card {
+  position: relative;
+
+  background: #fffdf9;
+
+  border-radius: 38px;
+
+  padding: 95px 38px 45px;
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.08),
+    inset 0 0 0 1px rgba(120, 112, 83, 0.08);
+}
+
+.dress2__card::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 14px;
+
+  border-radius: 28px;
+
+  border: 1px solid rgba(133, 124, 91, 0.12);
+
+  pointer-events: none;
+}
+
+.dress2__card h3 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 36px;
+
+  font-weight: 500;
+
+  color: #6f6546;
+}
+
+.dress2__text {
+  margin: 24px auto;
+
+  max-width: 340px;
+
+  line-height: 1.9;
+
+  font-size: 18px;
+
+  color: #756d57;
+}
+
+.dress2__note {
+  margin: 0 auto;
+
+  max-width: 330px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 22px;
+
+  font-style: italic;
+
+  line-height: 1.8;
+
+  color: #8b7e5c;
+}
+
+.dress2__divider {
+  width: 70px;
+
+  height: 1px;
+
+  margin: 32px auto;
+
+  background: rgba(130, 120, 85, 0.3);
+}
+
+.dress2__footer {
+  max-width: 360px;
+
+  margin: auto;
+
+  line-height: 2;
+
+  font-size: 16px;
+
+  color: #8a836b;
+}
+
+@media (max-width: 768px) {
+  .dress2 {
+    padding: 90px 18px;
+  }
+
+  .dress2__title {
+    font-size: 50px;
+  }
+
+  .dress2__subtitle {
+    font-size: 12px;
+
+    letter-spacing: 4px;
+  }
+
+  .dress2__image {
+    max-width: 360px;
+
+    margin-bottom: -60px;
+  }
+
+  .dress2__card {
+    padding: 80px 26px 36px;
+
+    border-radius: 28px;
+  }
+
+  .dress2__card h3 {
+    font-size: 30px;
+  }
+
+  .dress2__text {
+    font-size: 17px;
+  }
+
+  .dress2__note {
+    font-size: 19px;
+  }
+
+  .dress2__footer {
+    font-size: 15px;
+
+    line-height: 1.9;
+  }
+}

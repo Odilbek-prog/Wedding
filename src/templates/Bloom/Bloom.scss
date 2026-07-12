@@ -1,0 +1,27 @@
+.bloom {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 100%;
+
+  overflow-x: hidden;
+
+  background: #ffffff;
+}
+
+.bloom.preview-mode {
+  min-height: 100%;
+}
+
+.bloom__content {
+  position: relative;
+
+  width: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  background: #ffffff;
+}

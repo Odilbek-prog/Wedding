@@ -5,6 +5,7 @@ import templates from "../data/templates";
 import TemplateCard from "../components/TemplateCard/TemplateCard";
 import PhonePreview from "../components/PhonePreview/PhonePreview";
 import LaMaisonDoree from "../templates/LaMaisonDoree";
+import DayAndNight from "../templates/DayAndNight/DayAndNight";
 
 function Home() {
   const [selected, setSelected] = useState(null);
@@ -35,6 +36,8 @@ function Home() {
 
       <PhonePreview open={!!selected} onClose={() => setSelected(null)}>
         {selected?.component === "la-maison-doree" && <LaMaisonDoree preview />}
+
+        {selected?.component === "day-and-night" && <DayAndNight preview />}
       </PhonePreview>
     </>
   );
