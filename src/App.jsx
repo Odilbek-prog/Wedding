@@ -8,6 +8,7 @@ import demoInvitation from "./data/demoInvitation";
 import LaMaisonDoree from "./templates/LaMaisonDoree/LaMaisonDoree";
 import DayAndNight from "./templates/DayAndNight/DayAndNight";
 import Bloom from "./templates/Bloom/Bloom";
+import Royal from "./templates/Royal/Royal";
 
 function App() {
   return (
@@ -25,6 +26,10 @@ function App() {
       <Route
         path="/demo-bloom"
         element={<Bloom invitation={demoInvitation} />}
+      />
+      <Route
+        path="/demo-royal"
+        element={<Royal invitation={demoInvitation} />}
       />
       {/* <Route path="/invitation/:slug" element={<Invitation />} /> */}
     </Routes>

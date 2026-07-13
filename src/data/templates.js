@@ -26,6 +26,13 @@ const templates = [
     component: "bloom",
     link: "/demo-bloom",
   },
+  {
+    id: 4,
+    name: "Royal",
+    image: template4,
+    component: "royal",
+    link: "/demo-royal",
+  },
 ];
 
 export default templates;

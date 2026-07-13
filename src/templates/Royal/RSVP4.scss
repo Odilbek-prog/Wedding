@@ -1,0 +1,237 @@
+.rsvp4 {
+  padding: 90px 20px;
+
+  background: #ceb084;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+.rsvp4::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: radial-gradient(
+    circle at top,
+    rgba(255, 255, 255, 0.15),
+    transparent 65%
+  );
+
+  pointer-events: none;
+}
+
+.rsvp4__ornament {
+  display: block;
+
+  width: 170px;
+
+  margin: 0 auto 22px;
+
+  user-select: none;
+
+  pointer-events: none;
+}
+
+.rsvp4__header {
+  text-align: center;
+
+  margin-bottom: 38px;
+}
+
+.rsvp4__header h2 {
+  margin: 0;
+
+  font-family: "Monsieur La Doulaise", cursive;
+
+  font-size: 64px;
+
+  font-weight: 400;
+
+  color: #fff;
+
+  line-height: 1;
+}
+
+.rsvp4__header p {
+  margin-top: 8px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 22px;
+
+  font-weight: 600;
+
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.rsvp4__card {
+  width: min(430px, 100%);
+
+  margin: auto;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  border-radius: 32px;
+
+  padding: 36px 28px;
+
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.12);
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 24px;
+}
+
+.rsvp4__group {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.rsvp4__group label {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 18px;
+
+  font-weight: 700;
+
+  color: #8d6d42;
+}
+
+.rsvp4__group input,
+.rsvp4__group textarea {
+  width: 100%;
+
+  border: 1px solid #dcc8a8;
+
+  border-radius: 18px;
+
+  background: #fffdf9;
+
+  padding: 16px 18px;
+
+  font-size: 16px;
+
+  font-family: inherit;
+
+  color: #6f5d46;
+
+  transition: 0.3s;
+
+  outline: none;
+
+  resize: none;
+}
+
+.rsvp4__group input::placeholder,
+.rsvp4__group textarea::placeholder {
+  color: #b8a387;
+}
+
+.rsvp4__group input:focus,
+.rsvp4__group textarea:focus {
+  border-color: #b58d56;
+
+  box-shadow: 0 0 0 4px rgba(181, 141, 86, 0.12);
+
+  background: #fff;
+}
+
+.rsvp4__group textarea {
+  min-height: 170px;
+}
+
+.rsvp4__button {
+  margin-top: 10px;
+
+  height: 58px;
+
+  border: none;
+
+  border-radius: 999px;
+
+  background: linear-gradient(180deg, #c7a26f, #a97f48);
+
+  color: #fff;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition: 0.35s;
+
+  box-shadow: 0 18px 40px rgba(169, 127, 72, 0.25);
+}
+
+.rsvp4__button:hover {
+  transform: translateY(-3px);
+
+  box-shadow: 0 24px 50px rgba(169, 127, 72, 0.35);
+}
+
+@media (max-width: 768px) {
+  .rsvp4 {
+    padding: 70px 16px;
+  }
+
+  .rsvp4__ornament {
+    width: 140px;
+  }
+
+  .rsvp4__header {
+    margin-bottom: 30px;
+  }
+
+  .rsvp4__header h2 {
+    font-size: 52px;
+  }
+
+  .rsvp4__header p {
+    font-size: 18px;
+  }
+
+  .rsvp4__card {
+    padding: 28px 20px;
+
+    border-radius: 26px;
+
+    gap: 20px;
+  }
+
+  .rsvp4__group label {
+    font-size: 17px;
+  }
+
+  .rsvp4__group input,
+  .rsvp4__group textarea {
+    padding: 14px 16px;
+
+    font-size: 15px;
+  }
+
+  .rsvp4__group textarea {
+    min-height: 140px;
+  }
+
+  .rsvp4__button {
+    height: 54px;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+  }
+}

@@ -1,0 +1,160 @@
+.dress4 {
+  padding: 80px 20px 100px;
+
+  background: #f6f2ea;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  overflow: hidden;
+  background-position: center;
+
+  background-size: cover;
+
+  background-repeat: no-repeat;
+}
+
+.dress4__tower {
+  width: 170px;
+
+  margin-bottom: -28px;
+
+  position: relative;
+
+  z-index: 3;
+
+  pointer-events: none;
+
+  user-select: none;
+}
+
+.dress4__card {
+  width: min(430px, 100%);
+
+  border-radius: 34px;
+
+  padding: 55px 35px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.14);
+
+  isolation: isolate;
+}
+
+.dress4__card::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: rgba(255, 255, 255, 0.88);
+
+  backdrop-filter: blur(2px);
+
+  z-index: -1;
+}
+
+.dress4 h2 {
+  margin: 0 0 42px;
+
+  text-align: center;
+
+  font-family: "Monsieur La Doulaise", cursive;
+
+  font-size: 58px;
+
+  font-weight: 400;
+
+  color: #8a6942;
+
+  line-height: 1;
+}
+
+.dress4__section {
+  text-align: center;
+}
+
+.dress4__section h3 {
+  margin: 0;
+
+  font-family: "Monsieur La Doulaise", cursive;
+
+  font-size: 46px;
+
+  font-weight: 400;
+
+  color: #987348;
+
+  line-height: 1;
+}
+
+.dress4__section p {
+  margin: 16px 0 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 21px;
+
+  font-weight: 500;
+
+  color: #8f7554;
+
+  line-height: 1.7;
+}
+
+.dress4__divider {
+  width: 80px;
+
+  height: 1px;
+
+  margin: 38px auto;
+
+  background: linear-gradient(to right, transparent, #c9b18a, transparent);
+}
+
+@media (max-width: 768px) {
+  .dress4 {
+    padding: 65px 16px 85px;
+  }
+
+  .dress4__tower {
+    width: 135px;
+
+    margin-bottom: -20px;
+  }
+
+  .dress4__card {
+    padding: 45px 24px;
+
+    border-radius: 28px;
+  }
+
+  .dress4 h2 {
+    margin-bottom: 34px;
+
+    font-size: 48px;
+  }
+
+  .dress4__section h3 {
+    font-size: 38px;
+  }
+
+  .dress4__section p {
+    margin-top: 12px;
+
+    font-size: 18px;
+  }
+
+  .dress4__divider {
+    width: 65px;
+
+    margin: 30px auto;
+  }
+}

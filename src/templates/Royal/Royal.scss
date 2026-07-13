@@ -1,0 +1,27 @@
+.royal {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 100%;
+
+  overflow-x: hidden;
+
+  background: #ffffff;
+}
+
+.royal.preview-mode {
+  min-height: 100%;
+}
+
+.royal__content {
+  position: relative;
+
+  width: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  background: #ffffff;
+}
