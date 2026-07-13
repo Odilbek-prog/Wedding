@@ -27,21 +27,23 @@ function Admin() {
 
   if (!localStorage.getItem("token")) {
     return (
-      <div>
-        <h1>{t("admin.title")}</h1>
+      <div className="admin-login">
+        <div className="admin-login__card">
+          <h1>{t("admin.title")}</h1>
 
-        <input
-          placeholder={t("admin.username")}
-          onChange={(e) => setUsername(e.target.value)}
-        />
+          <input
+            placeholder={t("admin.username")}
+            onChange={(e) => setUsername(e.target.value)}
+          />
 
-        <input
-          type="password"
-          placeholder={t("admin.password")}
-          onChange={(e) => setPassword(e.target.value)}
-        />
+          <input
+            type="password"
+            placeholder={t("admin.password")}
+            onChange={(e) => setPassword(e.target.value)}
+          />
 
-        <button onClick={login}>{t("admin.login")}</button>
+          <button onClick={login}>{t("admin.login")}</button>
+        </div>
       </div>
     );
   }
