@@ -2,7 +2,7 @@ import template1 from "../assets/images/template1.jpg";
 import template2 from "../assets/images/template2.webp";
 import template3 from "../assets/images/template3.webp";
 import template4 from "../assets/images/template4.webp";
-import template5 from "../assets/images/template5.webp";
+import template5 from "../assets/images/template5.jpg";
 
 const templates = [
   {
@@ -32,6 +32,13 @@ const templates = [
     image: template4,
     component: "royal",
     link: "/demo-royal",
+  },
+  {
+    id: 5,
+    name: "Bridgerton",
+    image: template5,
+    component: "bridgerton",
+    link: "/demo-bridgerton",
   },
 ];
 

@@ -13,16 +13,21 @@ import DressCode4 from "./DressCode4";
 import WeddingGift4 from "./WeddingGift4";
 import RSVP4 from "./RSVP4";
 import Footer4 from "./Footer4";
+import Music from "../LaMaisonDoree/Music";
 
 function Bloom({ invitation = demoInvitation, preview = false }) {
   const [stage, setStage] = useState("video");
+  const [music, setMusic] = useState(false);
 
   const handleVideoFinish = () => {
     setStage("content");
+    setMusic(true);
   };
 
   return (
     <div className={`royal ${preview ? "preview-mode" : ""}`}>
+      <Music play={!preview && music} />
+
       {stage === "video" && (
         <IntroVideo preview={preview} onFinish={handleVideoFinish} />
       )}

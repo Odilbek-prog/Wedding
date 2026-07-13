@@ -1,8 +1,8 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
 import Admin from "./pages/Admin";
-// import Invitation from "./pages/Invitation";
+import Invitation from "./pages/Invitation"; // Izohdan ochildi
 import "./App.scss";
 import demoInvitation from "./data/demoInvitation";
 import LaMaisonDoree from "./templates/LaMaisonDoree/LaMaisonDoree";
@@ -15,6 +15,8 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/admin" element={<Admin />} />
+
+      {/* Demo dynamic linklar */}
       <Route
         path="/demo-la-maison-doree"
         element={<LaMaisonDoree invitation={demoInvitation} />}
@@ -31,7 +33,9 @@ function App() {
         path="/demo-royal"
         element={<Royal invitation={demoInvitation} />}
       />
-      {/* <Route path="/invitation/:slug" element={<Invitation />} /> */}
+
+      {/* Haqiqiy taklifnoma dynamic havolasi */}
+      <Route path="/invitation/:slug" element={<Invitation />} />
     </Routes>
   );
 }

@@ -7,20 +7,38 @@ function Dashboard() {
     groom: "",
     bride: "",
     date: "",
+    time: "", // Qo'shildi
     location: "",
+    venue: "", // Qo'shildi (To'yxona nomi)
+    address: "", // Qo'shildi (Manzil)
+    map: "", // Qo'shildi (Google Maps link)
   });
   const [link, setLink] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const createInvitation = async () => {
-    const token = localStorage.getItem("token");
+    if (!form.groom || !form.bride) {
+      alert("Iltimos, kelin va kuyov ismini kiriting!");
+      return;
+    }
 
-    const res = await api.post("/invitations", form, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
+    setLoading(true);
+    try {
+      const token = localStorage.getItem("token");
+      const res = await api.post("/invitations", form, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
 
-    setLink(`http://localhost:5173/invitation/${res.data.slug}`);
+      // Backenddan kelgan slug orqali link yaratish
+      setLink(`http://localhost:5173/invitation/${res.data.slug}`);
+    } catch (error) {
+      console.error("Xatolik:", error);
+      alert("Taklifnoma yaratishda xatolik yuz berdi!");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -33,50 +51,71 @@ function Dashboard() {
       >
         Logout
       </button>
+
       <div>
         <h1>Dashboard</h1>
+
+        <label>Shablonni tanlang:</label>
         <select
           value={form.template}
-          onChange={(e) =>
-            setForm({
-              ...form,
-              template: e.target.value,
-            })
-          }
+          onChange={(e) => setForm({ ...form, template: e.target.value })}
         >
           <option value="la-maison-doree">La Maison Dorée</option>
-          <option value="teatro">Teatro</option>
-          <option value="majestic">Majestic</option>
-          <option value="boho">Boho</option>
+          <option value="day-and-night">Day and Night</option>
+          <option value="bloom">Bloom</option>
           <option value="royal">Royal</option>
         </select>
 
         <input
-          placeholder="Kuyov"
+          placeholder="Kuyovning ismi"
+          value={form.groom}
           onChange={(e) => setForm({ ...form, groom: e.target.value })}
         />
 
         <input
-          placeholder="Kelin"
+          placeholder="Kelinning ismi"
+          value={form.bride}
           onChange={(e) => setForm({ ...form, bride: e.target.value })}
         />
 
         <input
-          placeholder="Sana"
+          placeholder="Sana (masalan: 2026-08-25)"
+          value={form.date}
           onChange={(e) => setForm({ ...form, date: e.target.value })}
         />
 
         <input
-          placeholder="Joy"
-          onChange={(e) => setForm({ ...form, location: e.target.value })}
+          placeholder="Vaqt (masalan: 18:00)"
+          value={form.time}
+          onChange={(e) => setForm({ ...form, time: e.target.value })}
         />
 
-        <button onClick={createInvitation}>Yaratish</button>
-      </div>
-      {link && (
-        <div className="generated-link">
-          <input value={link} readOnly />
+        <input
+          placeholder="To'yxona nomi"
+          value={form.venue}
+          onChange={(e) => setForm({ ...form, venue: e.target.value })}
+        />
 
+        <input
+          placeholder="To'liq manzil"
+          value={form.address}
+          onChange={(e) => setForm({ ...form, address: e.target.value })}
+        />
+
+        <input
+          placeholder="Google Maps Linki"
+          value={form.map}
+          onChange={(e) => setForm({ ...form, map: e.target.value })}
+        />
+
+        <button onClick={createInvitation} disabled={loading}>
+          {loading ? "Yaratilmoqda..." : "Yaratish"}
+        </button>
+      </div>
+
+      {link && (
+        <div className="generated-link" style={{ marginTop: "20px" }}>
+          <input value={link} readOnly style={{ width: "300px" }} />
           <button onClick={() => navigator.clipboard.writeText(link)}>
             Copy
           </button>

@@ -11,14 +11,23 @@ import DressCode2 from "./DressCode2";
 import WeddingGift2 from "./WeddingGift2";
 import RSVP2 from "./RSVP2";
 import Footer2 from "./Footer2";
+import Music from "../LaMaisonDoree/Music";
 
 function DayAndNight({ invitation = demoInvitation, preview = false }) {
   const [stage, setStage] = useState("video");
+  const [music, setMusic] = useState(false);
 
   return (
     <div className={`day-night ${preview ? "preview-mode" : ""}`}>
+      <Music play={!preview && music} />
       {stage === "video" && (
-        <IntroVideo preview={preview} onFinish={() => setStage("hero")} />
+        <IntroVideo
+          preview={preview}
+          onFinish={() => {
+            setStage("hero");
+            setMusic(true);
+          }}
+        />
       )}
 
       {stage === "hero" && (
