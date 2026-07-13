@@ -1,0 +1,79 @@
+.rsvp5 {
+  padding: 4rem 1rem;
+  background-color: #fdfaf6;
+  font-family: "Playfair Display", serif;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  color: #4a3737;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__title {
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+
+  &__subtitle {
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-bottom: 3rem;
+    color: #5c4d4d;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 500px;
+  }
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+
+  &__label {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  &__input,
+  &__textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d4c5c5;
+    background: transparent;
+    font-family: "Playfair Display", serif;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+
+    &:focus {
+      border-color: #8c7373;
+    }
+  }
+
+  &__textarea {
+    resize: vertical;
+  }
+
+  &__button {
+    margin-top: 1rem;
+    background: #4a3737;
+    color: white;
+    border: none;
+    padding: 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+
+    &:hover {
+      background: #5c4d4d;
+    }
+  }
+}

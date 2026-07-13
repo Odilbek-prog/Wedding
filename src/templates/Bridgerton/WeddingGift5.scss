@@ -1,0 +1,82 @@
+.wedding-gift5 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 1rem;
+  background-color: #fdfaf6;
+  font-family: "Playfair Display", serif;
+
+  &__image-wrapper {
+    margin-bottom: 1.5rem;
+    img {
+      width: 150px;
+      height: auto;
+    }
+  }
+
+  &__title {
+    color: #4a3737;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: 500;
+  }
+
+  &__content {
+    border: 1px solid #d4c5c5;
+    padding: 2.5rem;
+    max-width: 500px;
+    text-align: center;
+    background: transparent;
+  }
+
+  &__description {
+    color: #5c4d4d;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+  }
+
+  &__button {
+    background: transparent;
+    border: 1px solid #8c7373;
+    color: #8c7373;
+    padding: 0.8rem 1.8rem;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: #f1eaea;
+    }
+  }
+
+  &__arrow {
+    font-size: 0.7rem;
+    transition: transform 0.3s ease;
+
+    &--rotate {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__info {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #d4c5c5;
+    color: #4a3737;
+    font-style: italic;
+    animation: fadeIn 0.5s ease;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

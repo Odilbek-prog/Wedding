@@ -9,6 +9,7 @@ import LaMaisonDoree from "./templates/LaMaisonDoree/LaMaisonDoree";
 import DayAndNight from "./templates/DayAndNight/DayAndNight";
 import Bloom from "./templates/Bloom/Bloom";
 import Royal from "./templates/Royal/Royal";
+import Bridgerton from "./templates/Bridgerton/Bridgerton";
 
 function App() {
   return (
@@ -32,6 +33,10 @@ function App() {
       <Route
         path="/demo-royal"
         element={<Royal invitation={demoInvitation} />}
+      />
+      <Route
+        path="/demo-bridgerton"
+        element={<Bridgerton invitation={demoInvitation} />}
       />
 
       {/* Haqiqiy taklifnoma dynamic havolasi */}
