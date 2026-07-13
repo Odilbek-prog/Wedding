@@ -1,15 +1,8 @@
-import { useState } from "react";
-
 import templates from "../data/templates";
 
 import TemplateCard from "../components/TemplateCard/TemplateCard";
-import PhonePreview from "../components/PhonePreview/PhonePreview";
-import LaMaisonDoree from "../templates/LaMaisonDoree";
-import DayAndNight from "../templates/DayAndNight/DayAndNight";
 
 function Home() {
-  const [selected, setSelected] = useState(null);
-
   return (
     <>
       <section className="home-hero">
@@ -20,25 +13,16 @@ function Home() {
           unforgettable wedding invitation.
         </p>
       </section>
+
       <section className="templates">
         <h2>Templates</h2>
 
         <div className="templates-grid">
           {templates.map((template) => (
-            <TemplateCard
-              key={template.id}
-              template={template}
-              onPreview={setSelected}
-            />
+            <TemplateCard key={template.id} template={template} />
           ))}
         </div>
       </section>
-
-      <PhonePreview open={!!selected} onClose={() => setSelected(null)}>
-        {selected?.component === "la-maison-doree" && <LaMaisonDoree preview />}
-
-        {selected?.component === "day-and-night" && <DayAndNight preview />}
-      </PhonePreview>
     </>
   );
 }

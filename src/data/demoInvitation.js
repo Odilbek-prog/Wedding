@@ -6,7 +6,6 @@ const demoInvitation = {
   time: "18:00",
   location: "Hilton Tashkent",
   map: "https://maps.google.com",
-  music: "/music/music.mp3",
   venue: "The Peninsula Hotel Istanbul",
   address: "Azapkapı, Kemankeş Cd. No:11, İstanbul",
 };

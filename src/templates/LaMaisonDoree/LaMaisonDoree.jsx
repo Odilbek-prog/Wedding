@@ -40,7 +40,7 @@ function LaMaisonDoree({ invitation = demoInvitation, preview = false }) {
     <div className={`la-maison-doree ${preview ? "preview-mode" : ""}`}>
       <Music play={!preview && music} />
       {stage === "video" && (
-        <Intro Video preview={preview} onFinish={handleVideoFinish} />
+        <IntroVideo preview={preview} onFinish={handleVideoFinish} />
       )}
 
       {stage === "intro" && (

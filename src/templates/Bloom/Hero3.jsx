@@ -35,7 +35,7 @@ function Hero3({ invitation }) {
         className="hero3__content"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 1, delay: 5 }}
       >
         <svg
           viewBox="-20 -160 440 380"
@@ -65,7 +65,7 @@ function Hero3({ invitation }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{
             duration: 1,
-            delay: 0.4,
+            delay: 5,
           }}
         >
           {invitation.bride}
@@ -81,7 +81,7 @@ function Hero3({ invitation }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{
             duration: 1,
-            delay: 0.8,
+            delay: 5,
           }}
         >
           {invitation.date}

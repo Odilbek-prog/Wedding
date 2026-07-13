@@ -1,0 +1,110 @@
+.dresscode3 {
+  padding: 90px 20px;
+
+  background: #f4ece2;
+
+  display: flex;
+
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+.dresscode3__card {
+  width: min(430px, 100%);
+}
+
+.dresscode3__frame {
+  width: 100%;
+  height: 450px;
+
+  aspect-ratio: 0.78;
+
+  background-position: center;
+
+  background-repeat: no-repeat;
+
+  background-size: 100% 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  text-align: center;
+
+  padding: 100px 30px 28px;
+}
+
+.dresscode3 h2 {
+  margin: 0;
+
+  font-family: "Monsieur La Doulaise", cursive;
+
+  font-size: 52px;
+
+  font-weight: 400;
+
+  color: #4b412d;
+
+  line-height: 1;
+}
+
+.dresscode3 h3 {
+  margin: 100px 0 34px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 48px;
+
+  font-weight: 600;
+
+  color: #5b4a2d;
+
+  line-height: 1.1;
+}
+
+.dresscode3__people {
+  width: 88%;
+
+  margin-top: auto;
+
+  user-select: none;
+
+  pointer-events: none;
+
+  transition: 0.45s;
+}
+
+.dresscode3__card:hover .dresscode3__people {
+  transform: translateY(-6px) scale(1.03);
+}
+
+@media (max-width: 768px) {
+  .dresscode3 {
+    padding: 70px 14px;
+  }
+
+  .dresscode3__card {
+    width: 100%;
+  }
+
+  .dresscode3__frame {
+    padding: 100px 18px 18px;
+  }
+
+  .dresscode3 h2 {
+    font-size: 42px;
+  }
+
+  .dresscode3 h3 {
+    margin: 18px 0 26px;
+
+    font-size: 34px;
+  }
+
+  .dresscode3__people {
+    width: 92%;
+  }
+}

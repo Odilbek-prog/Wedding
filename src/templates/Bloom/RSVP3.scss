@@ -1,0 +1,266 @@
+.rsvp3 {
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 90px 20px;
+
+  background: #f4ece2;
+
+  display: flex;
+
+  justify-content: center;
+}
+
+.rsvp3::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: radial-gradient(
+    circle at top,
+    rgba(255, 255, 255, 0.45),
+    transparent 70%
+  );
+
+  pointer-events: none;
+}
+
+.rsvp3__card {
+  position: relative;
+
+  width: min(470px, 100%);
+
+  background: rgba(255, 252, 247, 0.72);
+
+  backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(194, 170, 126, 0.25);
+
+  border-radius: 34px;
+
+  padding: 42px 34px 50px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 25px 70px rgba(91, 74, 45, 0.08),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.45);
+}
+
+.rsvp3__flowers-top {
+  position: absolute;
+
+  top: -8px;
+
+  right: -6px;
+
+  width: 300px;
+
+  pointer-events: none;
+
+  user-select: none;
+}
+
+.rsvp3__flowers-bottom {
+  position: absolute;
+
+  left: -8px;
+
+  bottom: -6px;
+
+  width: 300px;
+
+  pointer-events: none;
+
+  user-select: none;
+}
+
+.rsvp3 h2 {
+  margin: 0;
+
+  text-align: center;
+
+  font-family: "Monsieur La Doulaise", cursive;
+
+  font-size: 62px;
+
+  font-weight: 400;
+
+  color: #4b412d;
+}
+
+.rsvp3__line {
+  width: 70px;
+
+  height: 2px;
+
+  background: #d9b6b6;
+
+  margin: 10px auto 18px;
+
+  border-radius: 20px;
+}
+
+.rsvp3__subtitle {
+  margin: 0 0 38px;
+
+  text-align: center;
+
+  font-size: 12px;
+
+  letter-spacing: 4px;
+
+  text-transform: uppercase;
+
+  color: #8b886d;
+
+  font-family: "Cormorant Garamond", serif;
+}
+
+.rsvp3__form {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 26px;
+}
+
+.rsvp3__group {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.rsvp3__group label {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 22px;
+
+  color: #53442f;
+
+  font-weight: 600;
+}
+
+.rsvp3__group input,
+.rsvp3__group textarea {
+  width: 100%;
+
+  border: none;
+
+  outline: none;
+
+  background: rgba(255, 255, 255, 0.58);
+
+  border: 1px solid rgba(194, 170, 126, 0.35);
+
+  border-radius: 16px;
+
+  padding: 16px 18px;
+
+  font-size: 15px;
+
+  color: #5a4a35;
+
+  font-family: inherit;
+
+  transition: 0.35s;
+
+  box-sizing: border-box;
+}
+
+.rsvp3__group textarea {
+  resize: none;
+
+  min-height: 170px;
+}
+
+.rsvp3__group input::placeholder,
+.rsvp3__group textarea::placeholder {
+  color: #aa9f90;
+}
+
+.rsvp3__group input:focus,
+.rsvp3__group textarea:focus {
+  border-color: #b99655;
+
+  background: #fff;
+
+  box-shadow: 0 0 0 4px rgba(185, 150, 85, 0.12);
+}
+
+.rsvp3 button {
+  margin-top: 12px;
+
+  height: 58px;
+
+  border: none;
+
+  border-radius: 999px;
+
+  cursor: pointer;
+
+  background: linear-gradient(180deg, #b89555, #8c6b37);
+
+  color: #fff;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+
+  transition: 0.35s;
+
+  box-shadow: 0 15px 35px rgba(140, 107, 55, 0.28);
+}
+
+.rsvp3 button:hover {
+  transform: translateY(-4px);
+
+  box-shadow: 0 22px 45px rgba(140, 107, 55, 0.35);
+}
+
+@media (max-width: 768px) {
+  .rsvp3 {
+    padding: 70px 14px;
+  }
+
+  .rsvp3__card {
+    padding: 36px 22px 44px;
+  }
+
+  .rsvp3__flowers-top {
+    width: 200px;
+  }
+
+  .rsvp3__flowers-bottom {
+    width: 200px;
+  }
+
+  .rsvp3 h2 {
+    font-size: 52px;
+  }
+
+  .rsvp3__subtitle {
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 30px;
+  }
+
+  .rsvp3__group label {
+    font-size: 20px;
+  }
+
+  .rsvp3__group textarea {
+    min-height: 140px;
+  }
+}

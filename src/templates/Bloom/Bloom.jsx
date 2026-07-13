@@ -9,10 +9,9 @@ import IntroVideo from "../LaMaisonDoree/IntroVideo";
 import Hero3 from "./Hero3";
 import Countdown3 from "./Countdown3";
 import Map3 from "./Map3";
-// import DressCode3 from "./DressCode3";
-// import WeddingGift3 from "./WeddingGift3";
-// import RSVP3 from "./RSVP3";
-// import Footer3 from "./Footer3";
+import DressCode3 from "./DressCode3";
+import RSVP3 from "./RSVP3";
+import Footer3 from "./Footer3";
 
 function Bloom({ invitation = demoInvitation, preview = false }) {
   const [stage, setStage] = useState("video");
@@ -35,13 +34,10 @@ function Bloom({ invitation = demoInvitation, preview = false }) {
 
           <Map3 invitation={invitation} />
 
-          {/* <DressCode3 />
-
-          <WeddingGift3 />
-
+          <DressCode3 />
           <RSVP3 />
 
-          <Footer3 invitation={invitation} /> */}
+          <Footer3 invitation={invitation} />
         </div>
       )}
     </div>
