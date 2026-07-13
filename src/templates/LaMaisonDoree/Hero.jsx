@@ -1,16 +1,42 @@
 import { motion } from "framer-motion";
 import { FaChevronDown } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
+
 import topFlower from "../../assets/images/flower-top.png";
 import bottomFlower from "../../assets/images/flower-bottom.png";
+
 import "./Hero.scss";
 
 function Hero({ invitation }) {
+  const { t, i18n } = useTranslation();
+
+  const locale = i18n.language === "ru" ? "ru-RU" : "uz-UZ";
+
+  const weddingDate = new Date(invitation.date);
+
+  const month = weddingDate.toLocaleDateString(locale, {
+    month: "long",
+  });
+
+  const day = weddingDate.toLocaleDateString(locale, {
+    day: "numeric",
+  });
+
+  const year = weddingDate.toLocaleDateString(locale, {
+    year: "numeric",
+  });
+
+  const weekday = weddingDate.toLocaleDateString(locale, {
+    weekday: "long",
+  });
+
   const scrollNext = () => {
     window.scrollTo({
       top: window.innerHeight,
       behavior: "smooth",
     });
   };
+
   return (
     <motion.section
       className="hero"
@@ -39,6 +65,7 @@ function Hero({ invitation }) {
           repeat: Infinity,
         }}
       />
+
       <motion.img
         src={topFlower}
         className="hero__flower hero__flower--top"
@@ -64,6 +91,7 @@ function Hero({ invitation }) {
           repeat: Infinity,
         }}
       />
+
       <motion.div
         className="hero__bg"
         animate={{
@@ -87,7 +115,7 @@ function Hero({ invitation }) {
           animate={{ opacity: 1, letterSpacing: 6 }}
           transition={{ delay: 0.2, duration: 1 }}
         >
-          Together with their families
+          {t("hero.invite")}
         </motion.span>
 
         <motion.h1
@@ -104,15 +132,15 @@ function Hero({ invitation }) {
         </motion.h1>
 
         <div className="hero__dateCard">
-          <div className="hero__month">JULY</div>
+          <div className="hero__month">{month.toUpperCase()}</div>
 
           <div className="hero__middle">
-            <span className="hero__day">23</span>
+            <span className="hero__day">{day}</span>
 
-            <span className="hero__year">2026</span>
+            <span className="hero__year">{year}</span>
           </div>
 
-          <div className="hero__weekday">THURSDAY</div>
+          <div className="hero__weekday">{weekday.toUpperCase()}</div>
         </div>
 
         <motion.div

@@ -1,15 +1,13 @@
 import { motion } from "framer-motion";
-import { FaRegCopy } from "react-icons/fa6";
+import { useTranslation } from "react-i18next";
+
 import leftFlower from "../../assets/images/flower-top.png";
 import rightFlower from "../../assets/images/flower-bottom.png";
+
 import "./WeddingGift.scss";
 
 function WeddingGift() {
-  const cardNumber = "8600 1234 5678 9012";
-
-  const copyCard = () => {
-    navigator.clipboard.writeText(cardNumber);
-  };
+  const { t } = useTranslation();
 
   return (
     <section className="gift">
@@ -31,30 +29,22 @@ function WeddingGift() {
           alt=""
         />
 
-        <span className="gift__subtitle">Wedding Gift</span>
+        <span className="gift__subtitle">{t("gift.subtitle")}</span>
 
-        <h2>Wedding Gift</h2>
+        <h2>{t("gift.title")}</h2>
 
-        <p className="gift__text">Your presence is our greatest gift.</p>
+        <p className="gift__text">{t("gift.text")}</p>
 
-        <p className="gift__desc">
-          If you wish to honour us with a gift, we kindly prefer monetary
-          contributions. Bank details are provided below.
-        </p>
+        <p className="gift__desc">{t("gift.description")}</p>
+
         <div className="gift__preferred">
-          <h3>Card</h3>
+          <h3>{t("gift.cardTitle")}</h3>
 
-          <span>preferred</span>
+          <span>{t("gift.preferred")}</span>
 
           <div className="gift__divider" />
 
-          <p>
-            On the wedding day,
-            <br />
-            you can hand us a card
-            <br />
-            or envelope in person.
-          </p>
+          <p>{t("gift.cardDescription")}</p>
         </div>
       </motion.div>
     </section>

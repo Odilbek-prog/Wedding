@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 import "./DressCode3.scss";
 
@@ -6,6 +7,8 @@ import frame from "../../assets/images/dresscode3frame.png";
 import people from "../../assets/images/dresscode3.png";
 
 function DressCode3() {
+  const { t } = useTranslation();
+
   return (
     <section className="dresscode3">
       <motion.div
@@ -39,7 +42,7 @@ function DressCode3() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            Dress Code
+            {t("dresscode3.title")}
           </motion.h2>
 
           <motion.h3
@@ -51,12 +54,12 @@ function DressCode3() {
               duration: 0.8,
             }}
           >
-            Black Tie
+            {t("dresscode3.subtitle")}
           </motion.h3>
 
           <motion.img
             src={people}
-            alt="Dress Code"
+            alt={t("dresscode3.title")}
             className="dresscode3__people"
             initial={{
               opacity: 0,

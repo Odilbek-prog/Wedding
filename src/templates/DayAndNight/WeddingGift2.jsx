@@ -1,25 +1,13 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { FaRegCopy, FaCheck } from "react-icons/fa6";
+import { useTranslation } from "react-i18next";
 
 import "./WeddingGift2.scss";
 
 import flowers from "../../assets/images/giftflowers.png";
 
 function WeddingGift2() {
-  const cardNumber = "8600 1234 5678 9012";
-
-  const [copied, setCopied] = useState(false);
-
-  const copyCard = async () => {
-    await navigator.clipboard.writeText(cardNumber);
-
-    setCopied(true);
-
-    setTimeout(() => {
-      setCopied(false);
-    }, 2000);
-  };
+  const { t } = useTranslation();
 
   return (
     <section className="gift2">
@@ -30,27 +18,21 @@ function WeddingGift2() {
         viewport={{ once: true }}
         transition={{ duration: 1 }}
       >
-        <span className="gift2__title">Gifts</span>
+        <span className="gift2__title">{t("gift2.title")}</span>
 
-        <p className="gift2__subtitle">A THOUGHTFUL GESTURE</p>
+        <p className="gift2__subtitle">{t("gift2.subtitle")}</p>
 
         <div className="gift2__card">
-          <p className="gift2__text">
-            Your presence is the greatest gift of all.
-            <br />
-            If you'd like to honor us with a gift, you may use the card below.
-          </p>
+          <p className="gift2__text">{t("gift2.text")}</p>
 
           <div className="gift2__method">
             <div className="gift2__methodHead">
-              <span>Card</span>
+              <span>{t("gift2.card")}</span>
 
-              <small>preferred</small>
+              <small>{t("gift2.preferred")}</small>
             </div>
 
-            <p className="gift2__methodText">
-              On the wedding day, you can hand us a card or envelope in person.
-            </p>
+            <p className="gift2__methodText">{t("gift2.methodText")}</p>
           </div>
 
           <img src={flowers} alt="" className="gift2__flowers" />

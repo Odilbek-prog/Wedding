@@ -1,10 +1,13 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 import "./RSVP4.scss";
 
 import ornament from "../../assets/images/ornament.png";
 
 function RSVP4() {
+  const { t } = useTranslation();
+
   return (
     <section className="rsvp4">
       <motion.img
@@ -23,9 +26,9 @@ function RSVP4() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
       >
-        <h2>RSVP</h2>
+        <h2>{t("rsvp4.title")}</h2>
 
-        <p>Let us know if you can make it</p>
+        <p>{t("rsvp4.subtitle")}</p>
       </motion.div>
 
       <motion.form
@@ -36,34 +39,30 @@ function RSVP4() {
         transition={{ duration: 1 }}
       >
         <div className="rsvp4__group">
-          <label>Full Name</label>
+          <label>{t("rsvp4.fullName")}</label>
 
-          <input type="text" placeholder="Enter your full name" />
+          <input type="text" placeholder={t("rsvp4.fullNamePlaceholder")} />
         </div>
 
         <div className="rsvp4__group">
-          <label>Phone Number</label>
+          <label>{t("rsvp4.phoneNumber")}</label>
 
-          <input type="tel" placeholder="+998 90 123 45 67" />
+          <input type="tel" placeholder={t("rsvp4.phonePlaceholder")} />
         </div>
 
         <div className="rsvp4__group">
-          <label>Leave Your Wishes</label>
+          <label>{t("rsvp4.wishes")}</label>
 
-          <textarea rows="6" placeholder="Write your wishes..." />
+          <textarea rows="6" placeholder={t("rsvp4.wishesPlaceholder")} />
         </div>
 
         <motion.button
           type="submit"
           className="rsvp4__button"
-          whileHover={{
-            scale: 1.03,
-          }}
-          whileTap={{
-            scale: 0.97,
-          }}
+          whileHover={{ scale: 1.03 }}
+          whileTap={{ scale: 0.97 }}
         >
-          Submit Response
+          {t("rsvp4.submit")}
         </motion.button>
       </motion.form>
     </section>

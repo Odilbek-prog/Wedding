@@ -7,6 +7,7 @@ import LaMaisonDoree from "../templates/LaMaisonDoree/LaMaisonDoree";
 import DayAndNight from "../templates/DayAndNight/DayAndNight";
 import Bloom from "../templates/Bloom/Bloom";
 import Royal from "../templates/Royal/Royal";
+import Bridgerton from "../templates/Bridgerton/Bridgerton";
 
 function Invitation() {
   const { slug } = useParams(); // URL'dagi slug'ni ushlab oladi
@@ -51,6 +52,8 @@ function Invitation() {
       return <Bloom invitation={invitation} />;
     case "royal":
       return <Royal invitation={invitation} />;
+    case "bridgerton":
+      return <Bridgerton invitation={invitation} />;
     default:
       // Agar shablon topilmasa, standart holatda bittasini ko'rsatadi
       return <LaMaisonDoree invitation={invitation} />;

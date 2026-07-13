@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { FaPaperPlane } from "react-icons/fa6";
 
 import leftFlower from "../../assets/images/vase-left.png";
@@ -7,6 +8,8 @@ import rightFlower from "../../assets/images/vase-right.png";
 import "./RSVP.scss";
 
 function RSVP() {
+  const { t } = useTranslation();
+
   return (
     <section className="rsvp">
       <motion.div
@@ -15,17 +18,16 @@ function RSVP() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
-        <span className="rsvp__subtitle">
-          We look forward to celebrating with you
-        </span>
+        <span className="rsvp__subtitle">{t("rsvp.subtitle")}</span>
 
-        <h2>RSVP</h2>
+        <h2>{t("rsvp.title")}</h2>
 
-        <input placeholder="Full Name" />
+        <input placeholder={t("rsvp.fullName")} />
 
-        <input placeholder="Phone Number" />
+        <input placeholder={t("rsvp.phoneNumber")} />
 
-        <textarea placeholder="Leave your wishes..." />
+        <textarea placeholder={t("rsvp.wishes")} />
+
         <img
           src={leftFlower}
           alt=""
@@ -37,9 +39,10 @@ function RSVP() {
           alt=""
           className="rsvp__flower rsvp__flower--right"
         />
+
         <button>
           <FaPaperPlane />
-          Submit Response
+          {t("rsvp.submit")}
         </button>
       </motion.div>
     </section>

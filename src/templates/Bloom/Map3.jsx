@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { FaLocationDot } from "react-icons/fa6";
+import { useTranslation } from "react-i18next";
 
 import "./Map3.scss";
 
@@ -8,13 +9,20 @@ import frame from "../../assets/images/mapbg.png";
 import venue from "../../assets/images/venue3.png";
 
 function Map3({ invitation }) {
+  const { t, i18n } = useTranslation();
+
+  const eventDate = new Date(invitation.date).toLocaleDateString(
+    i18n.language === "ru" ? "ru-RU" : "uz-UZ",
+    {
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+    },
+  );
+
   return (
     <section className="map3">
-      {/* TOP FLOWERS */}
-
       <img src={flowers} alt="" className="map3__flowers" />
-
-      {/* CARD */}
 
       <motion.div
         className="map3__card"
@@ -35,17 +43,23 @@ function Map3({ invitation }) {
           duration: 1,
         }}
       >
-        <div className="map3__frame">
+        <div
+          className="map3__frame"
+          style={{
+            backgroundImage: `url(${frame})`,
+          }}
+        >
           <span className="map3__subtitle">
-            Ceremony
-            <br />& Reception
+            {t("map3.subtitle1")}
+            <br />
+            {t("map3.subtitle2")}
           </span>
 
-          <span className="map3__small">WHERE WE CELEBRATE</span>
+          <span className="map3__small">{t("map3.small")}</span>
 
           <h2>{invitation.venue}</h2>
 
-          <div className="map3__date">{invitation.date}</div>
+          <div className="map3__date">{eventDate}</div>
 
           <div className="map3__time">{invitation.time}</div>
 
@@ -53,7 +67,7 @@ function Map3({ invitation }) {
 
           <motion.img
             src={venue}
-            alt=""
+            alt={invitation.venue}
             className="map3__venue"
             whileHover={{
               scale: 1.05,
@@ -68,7 +82,7 @@ function Map3({ invitation }) {
           className="map3__button"
         >
           <FaLocationDot />
-          Open In Maps
+          {t("map3.button")}
         </a>
       </motion.div>
     </section>

@@ -1,11 +1,16 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 import "./Map5.scss";
 
 import venueImage from "../../assets/images/map5top.png";
 
 function Map5({ invitation }) {
-  const eventDate = new Date(invitation.date).toLocaleDateString("en-US", {
+  const { t, i18n } = useTranslation();
+
+  const locale = i18n.language === "ru" ? "ru-RU" : "uz-UZ";
+
+  const eventDate = new Date(invitation.date).toLocaleDateString(locale, {
     day: "numeric",
     month: "long",
     year: "numeric",
@@ -31,20 +36,20 @@ function Map5({ invitation }) {
         transition={{ duration: 1 }}
       >
         <h2>
-          Join Us To Celebrate
+          {t("map5.title1")}
           <br />
-          Our Wedding
+          {t("map5.title2")}
         </h2>
 
         <p className="map5__description">
-          We are so excited to celebrate this
+          {t("map5.description1")}
           <br />
-          special day with you.
+          {t("map5.description2")}
         </p>
 
         <div className="map5__divider" />
 
-        <h3>Time &amp; Location</h3>
+        <h3>{t("map5.timeLocation")}</h3>
 
         <div className="map5__info">
           <p className="map5__venue">{invitation.venue}</p>
@@ -64,7 +69,7 @@ function Map5({ invitation }) {
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}
         >
-          View on Map
+          {t("map5.button")}
         </motion.a>
       </motion.div>
     </section>

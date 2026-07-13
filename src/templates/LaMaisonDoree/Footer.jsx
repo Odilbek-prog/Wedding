@@ -1,7 +1,11 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
+
 import "./Footer.scss";
 
 function Footer({ invitation }) {
+  const { t } = useTranslation();
+
   return (
     <footer className="footer">
       <motion.div
@@ -10,9 +14,7 @@ function Footer({ invitation }) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
-        <span className="footer__subtitle">
-          We Can't Wait To Celebrate With You
-        </span>
+        <span className="footer__subtitle">{t("footer.subtitle")}</span>
 
         <h2 className="footer__names">
           {invitation.groom}
@@ -26,17 +28,11 @@ function Footer({ invitation }) {
 
         <p className="footer__date">{invitation.date}</p>
 
-        <p className="footer__thanks">
-          We look forward to celebrating
-          <br />
-          this unforgettable day together.
-        </p>
+        <p className="footer__thanks">{t("footer.thanks")}</p>
 
         <div className="footer__divider footer__divider--small"></div>
 
-        <p className="footer__copyright">
-          Thank you for being part of our story.
-        </p>
+        <p className="footer__copyright">{t("footer.copyright")}</p>
       </motion.div>
     </footer>
   );

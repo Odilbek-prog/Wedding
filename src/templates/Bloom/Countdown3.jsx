@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 import "./Countdown3.scss";
 
 function Countdown3({ invitation }) {
+  const { t, i18n } = useTranslation();
+
   const targetDate = new Date(invitation.date);
 
   const getTime = () => {
@@ -41,6 +44,15 @@ function Countdown3({ invitation }) {
     return () => clearInterval(interval);
   }, []);
 
+  const eventDate = new Date(invitation.date).toLocaleDateString(
+    i18n.language === "ru" ? "ru-RU" : "uz-UZ",
+    {
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+    },
+  );
+
   return (
     <section className="countdown3">
       <motion.div
@@ -50,10 +62,10 @@ function Countdown3({ invitation }) {
         viewport={{ once: true }}
         transition={{ duration: 1 }}
       >
-        <h2 className="countdown3__title">Countdown</h2>
+        <h2 className="countdown3__title">{t("countdown3.title")}</h2>
 
         <p className="countdown3__date">
-          UNTIL {invitation.day} {invitation.month} {invitation.year}
+          {t("countdown3.until")} {eventDate.toUpperCase()}
         </p>
 
         <div className="countdown3__timer">
@@ -66,7 +78,7 @@ function Countdown3({ invitation }) {
               {time.days}
             </motion.span>
 
-            <small>DAYS</small>
+            <small>{t("countdown3.days")}</small>
           </div>
 
           <div className="countdown3__item">
@@ -78,7 +90,7 @@ function Countdown3({ invitation }) {
               {time.hours}
             </motion.span>
 
-            <small>HOURS</small>
+            <small>{t("countdown3.hours")}</small>
           </div>
 
           <div className="countdown3__item">
@@ -90,7 +102,7 @@ function Countdown3({ invitation }) {
               {time.minutes}
             </motion.span>
 
-            <small>MINUTES</small>
+            <small>{t("countdown3.minutes")}</small>
           </div>
         </div>
       </motion.div>

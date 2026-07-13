@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import "./RSVP3.scss";
 
@@ -7,6 +8,8 @@ import topFlowers from "../../assets/images/rsvptop.png";
 import bottomFlowers from "../../assets/images/rsvpbottom.png";
 
 function RSVP3() {
+  const { t } = useTranslation();
+
   const [form, setForm] = useState({
     fullName: "",
     phone: "",
@@ -25,7 +28,7 @@ function RSVP3() {
 
     console.log(form);
 
-    alert("Thank you for your response!");
+    alert(t("rsvp3.success"));
   };
 
   return (
@@ -56,14 +59,12 @@ function RSVP3() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          RSVP
+          {t("rsvp3.title")}
         </motion.h2>
 
         <div className="rsvp3__line" />
 
-        <p className="rsvp3__subtitle">
-          Kindly respond at your earliest convenience
-        </p>
+        <p className="rsvp3__subtitle">{t("rsvp3.subtitle")}</p>
 
         <motion.form
           className="rsvp3__form"
@@ -74,12 +75,12 @@ function RSVP3() {
           transition={{ delay: 0.25 }}
         >
           <div className="rsvp3__group">
-            <label>Full Name</label>
+            <label>{t("rsvp3.fullName")}</label>
 
             <input
               type="text"
               name="fullName"
-              placeholder="Enter your full name"
+              placeholder={t("rsvp3.fullNamePlaceholder")}
               value={form.fullName}
               onChange={handleChange}
               required
@@ -87,7 +88,7 @@ function RSVP3() {
           </div>
 
           <div className="rsvp3__group">
-            <label>Phone Number</label>
+            <label>{t("rsvp3.phone")}</label>
 
             <input
               type="tel"
@@ -100,12 +101,12 @@ function RSVP3() {
           </div>
 
           <div className="rsvp3__group">
-            <label>Leave Your Wishes</label>
+            <label>{t("rsvp3.wishes")}</label>
 
             <textarea
               name="message"
               rows={6}
-              placeholder="Write your wishes..."
+              placeholder={t("rsvp3.wishesPlaceholder")}
               value={form.message}
               onChange={handleChange}
             />
@@ -120,7 +121,7 @@ function RSVP3() {
             }}
             type="submit"
           >
-            Send Wishes
+            {t("rsvp3.button")}
           </motion.button>
         </motion.form>
       </motion.div>

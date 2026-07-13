@@ -1,10 +1,14 @@
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
+
 import "./IntroVideo.scss";
 import poster from "../../assets/images/poster.png";
 import introVideo from "../../assets/videos/intro.mp4";
 
 function IntroVideo({ onFinish, preview }) {
+  const { t } = useTranslation();
+
   const videoRef = useRef(null);
 
   const [started, setStarted] = useState(false);
@@ -39,7 +43,7 @@ function IntroVideo({ onFinish, preview }) {
             duration: 2,
           }}
         >
-          Tap Anywhere
+          {t("introVideo.tapAnywhere")}
         </motion.div>
       )}
     </motion.section>

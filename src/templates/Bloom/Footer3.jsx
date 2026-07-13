@@ -1,10 +1,22 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 import "./Footer3.scss";
 
 import frame from "../../assets/images/footerframe.png";
 
 function Footer3({ invitation }) {
+  const { i18n } = useTranslation();
+
+  const eventDate = new Date(invitation.date).toLocaleDateString(
+    i18n.language === "ru" ? "ru-RU" : "uz-UZ",
+    {
+      month: "long",
+      day: "numeric",
+      year: "numeric",
+    },
+  );
+
   return (
     <footer className="footer3">
       <motion.div
@@ -57,13 +69,7 @@ function Footer3({ invitation }) {
 
           <div className="footer3__divider" />
 
-          <p>
-            {new Date(invitation.date).toLocaleDateString("en-US", {
-              month: "long",
-              day: "numeric",
-              year: "numeric",
-            })}
-          </p>
+          <p>{eventDate}</p>
         </motion.div>
       </motion.div>
     </footer>

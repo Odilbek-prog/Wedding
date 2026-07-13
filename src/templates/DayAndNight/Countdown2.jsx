@@ -1,8 +1,12 @@
 import Countdown from "react-countdown";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
+
 import "./Countdown2.scss";
 
 function Countdown2({ invitation }) {
+  const { t } = useTranslation();
+
   return (
     <section className="countdown2">
       <motion.div
@@ -14,9 +18,9 @@ function Countdown2({ invitation }) {
       >
         <div className="countdown2__ornament">✦ ✦ ✦</div>
 
-        <span className="countdown2__script">Countdown</span>
+        <span className="countdown2__script">{t("countdown2.script")}</span>
 
-        <h2>TO THE MOST SPECIAL DAY OF OUR LIVES</h2>
+        <h2>{t("countdown2.title")}</h2>
 
         <Countdown
           date={new Date(`${invitation.date} ${invitation.time}`)}
@@ -24,28 +28,28 @@ function Countdown2({ invitation }) {
             <div className="countdown2__grid">
               <div className="countdown2__item">
                 <h3>{days}</h3>
-                <span>DAYS</span>
+                <span>{t("countdown2.days")}</span>
               </div>
 
               <div className="countdown2__divider"></div>
 
               <div className="countdown2__item">
                 <h3>{hours}</h3>
-                <span>HOURS</span>
+                <span>{t("countdown2.hours")}</span>
               </div>
 
               <div className="countdown2__divider"></div>
 
               <div className="countdown2__item">
                 <h3>{minutes}</h3>
-                <span>MINUTES</span>
+                <span>{t("countdown2.minutes")}</span>
               </div>
 
               <div className="countdown2__divider"></div>
 
               <div className="countdown2__item">
                 <h3>{seconds}</h3>
-                <span>SECONDS</span>
+                <span>{t("countdown2.seconds")}</span>
               </div>
             </div>
           )}

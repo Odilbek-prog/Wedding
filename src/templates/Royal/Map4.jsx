@@ -1,11 +1,16 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 import "./Map4.scss";
 
 import venueImage from "../../assets/images/venue4.png";
 
 function Map4({ invitation }) {
-  const eventDate = new Date(invitation.date).toLocaleDateString("en-US", {
+  const { t, i18n } = useTranslation();
+
+  const locale = i18n.language === "ru" ? "ru-RU" : "uz-UZ";
+
+  const eventDate = new Date(invitation.date).toLocaleDateString(locale, {
     day: "numeric",
     month: "long",
     year: "numeric",
@@ -20,9 +25,9 @@ function Map4({ invitation }) {
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
       >
-        <h2>The Venue</h2>
+        <h2>{t("map4.title")}</h2>
 
-        <p>Where we celebrate</p>
+        <p>{t("map4.subtitle")}</p>
       </motion.div>
 
       <motion.div
@@ -64,7 +69,7 @@ function Map4({ invitation }) {
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}
         >
-          Open in Maps
+          {t("map4.button")}
         </motion.a>
       </motion.div>
     </section>

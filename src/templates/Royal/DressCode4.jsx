@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 import "./DressCode4.scss";
 
@@ -6,6 +7,8 @@ import tower from "../../assets/images/dress4top.png";
 import cardBg from "../../assets/images/dress4bg.png";
 
 function DressCode4() {
+  const { t } = useTranslation();
+
   return (
     <section
       className="dress4"
@@ -36,21 +39,21 @@ function DressCode4() {
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
         >
-          Dress Code
+          {t("dressCode4.title")}
         </motion.h2>
 
         <div className="dress4__section">
-          <h3>Women</h3>
+          <h3>{t("dressCode4.womenTitle")}</h3>
 
-          <p>Cocktail or formal dress</p>
+          <p>{t("dressCode4.womenText")}</p>
         </div>
 
         <div className="dress4__divider" />
 
         <div className="dress4__section">
-          <h3>Men</h3>
+          <h3>{t("dressCode4.menTitle")}</h3>
 
-          <p>Dark suit and tie</p>
+          <p>{t("dressCode4.menText")}</p>
         </div>
       </motion.div>
     </section>

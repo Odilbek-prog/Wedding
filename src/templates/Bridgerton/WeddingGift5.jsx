@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import "./WeddingGift5.scss";
-import weddingCakeImage from "../../assets/images/gifts-cake.png"; // Update the path to your image
+import weddingCakeImage from "../../assets/images/gifts-cake.png";
 
 const WeddingGift5 = () => {
+  const { t } = useTranslation();
+
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -11,22 +14,21 @@ const WeddingGift5 = () => {
         <img src={weddingCakeImage} alt="Wedding Cake" />
       </div>
 
-      <h2 className="wedding-gift5__title">Gifts</h2>
+      <h2 className="wedding-gift5__title">{t("gift5.title")}</h2>
 
       <div className="wedding-gift5__content">
-        <p className="wedding-gift5__description">
-          Your presence is the best gift — having you by our side on this
-          special day is truly all we need. However, if you wish to give a gift,
-          please see the details below:
-        </p>
+        <p className="wedding-gift5__description">{t("gift5.description")}</p>
 
         <button
           className="wedding-gift5__button"
           onClick={() => setIsOpen(!isOpen)}
         >
-          <span>Card preferred</span>
+          <span>{t("gift5.cardPreferred")}</span>
+
           <span
-            className={`wedding-gift5__arrow ${isOpen ? "wedding-gift5__arrow--rotate" : ""}`}
+            className={`wedding-gift5__arrow ${
+              isOpen ? "wedding-gift5__arrow--rotate" : ""
+            }`}
           >
             ▼
           </span>
@@ -34,9 +36,7 @@ const WeddingGift5 = () => {
 
         {isOpen && (
           <div className="wedding-gift5__info">
-            <p>
-              On the wedding day, you can hand us a card or envelope in person.
-            </p>
+            <p>{t("gift5.cardInfo")}</p>
           </div>
         )}
       </div>

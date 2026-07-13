@@ -1,9 +1,22 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { FaLocationDot } from "react-icons/fa6";
+
 import venueImage from "../../assets/images/venue.png";
+
 import "./Map.scss";
 
 function Map({ invitation }) {
+  const { t, i18n } = useTranslation();
+
+  const locale = i18n.language === "ru" ? "ru-RU" : "uz-UZ";
+
+  const formattedDate = new Date(invitation.date).toLocaleDateString(locale, {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+
   return (
     <section className="map">
       <motion.div
@@ -25,12 +38,12 @@ function Map({ invitation }) {
           transition={{ duration: 0.4 }}
         />
 
-        <span className="map__subtitle">Wedding Venue</span>
+        <span className="map__subtitle">{t("map.subtitle")}</span>
 
         <h2>{invitation.venue}</h2>
 
         <p className="map__date">
-          {invitation.date}
+          {formattedDate}
           <br />
           {invitation.time}
         </p>
@@ -44,7 +57,7 @@ function Map({ invitation }) {
         </div>
 
         <a href={invitation.map} target="_blank" rel="noreferrer">
-          View On Map
+          {t("map.button")}
         </a>
       </motion.div>
     </section>

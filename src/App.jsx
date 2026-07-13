@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import LanguageSwitcher from "./components/LanguageSwitcher/LanguageSwitcher";
 
 import Home from "./pages/Home";
 import Admin from "./pages/Admin";
@@ -13,35 +14,38 @@ import Bridgerton from "./templates/Bridgerton/Bridgerton";
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/admin" element={<Admin />} />
+    <>
+      <LanguageSwitcher />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/admin" element={<Admin />} />
 
-      {/* Demo dynamic linklar */}
-      <Route
-        path="/demo-la-maison-doree"
-        element={<LaMaisonDoree invitation={demoInvitation} />}
-      />
-      <Route
-        path="/demo-day-and-night"
-        element={<DayAndNight invitation={demoInvitation} />}
-      />
-      <Route
-        path="/demo-bloom"
-        element={<Bloom invitation={demoInvitation} />}
-      />
-      <Route
-        path="/demo-royal"
-        element={<Royal invitation={demoInvitation} />}
-      />
-      <Route
-        path="/demo-bridgerton"
-        element={<Bridgerton invitation={demoInvitation} />}
-      />
+        {/* Demo dynamic linklar */}
+        <Route
+          path="/demo-la-maison-doree"
+          element={<LaMaisonDoree invitation={demoInvitation} />}
+        />
+        <Route
+          path="/demo-day-and-night"
+          element={<DayAndNight invitation={demoInvitation} />}
+        />
+        <Route
+          path="/demo-bloom"
+          element={<Bloom invitation={demoInvitation} />}
+        />
+        <Route
+          path="/demo-royal"
+          element={<Royal invitation={demoInvitation} />}
+        />
+        <Route
+          path="/demo-bridgerton"
+          element={<Bridgerton invitation={demoInvitation} />}
+        />
 
-      {/* Haqiqiy taklifnoma dynamic havolasi */}
-      <Route path="/invitation/:slug" element={<Invitation />} />
-    </Routes>
+        {/* Haqiqiy taklifnoma dynamic havolasi */}
+        <Route path="/invitation/:slug" element={<Invitation />} />
+      </Routes>
+    </>
   );
 }
 

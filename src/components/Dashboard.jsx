@@ -1,7 +1,9 @@
 import { useState } from "react";
 import api from "../api/axios";
+import { useTranslation } from "react-i18next";
 
 function Dashboard() {
+  const { t } = useTranslation();
   const [form, setForm] = useState({
     template: "la-maison-doree",
     groom: "",
@@ -24,7 +26,7 @@ function Dashboard() {
 
   const createInvitation = async () => {
     if (!form.groom || !form.bride) {
-      alert("Iltimos, kelin va kuyov ismini kiriting!");
+      alert(t("dashboard.alertFillNames"));
       return;
     }
 
@@ -42,7 +44,7 @@ function Dashboard() {
       setLink(`${currentDomain}/invitation/${res.data.slug}`);
     } catch (error) {
       console.error("Xatolik:", error);
-      alert("Taklifnoma yaratishda xatolik yuz berdi!");
+      alert(t("dashboard.alertCreateError"));
     } finally {
       setLoading(false);
     }
@@ -74,7 +76,7 @@ function Dashboard() {
           alignItems: "center",
         }}
       >
-        <h1>Dashboard</h1>
+        <h1>{t("dashboard.title")}</h1>
         <button
           onClick={() => {
             localStorage.removeItem("token");
@@ -89,7 +91,7 @@ function Dashboard() {
             cursor: "pointer",
           }}
         >
-          Logout
+          {t("dashboard.logout")}
         </button>
       </div>
 
@@ -101,10 +103,10 @@ function Dashboard() {
           borderRadius: "8px",
         }}
       >
-        <h2>Taklifnoma Yaratish</h2>
+        <h2>{t("dashboard.createInvitation")}</h2>
 
         <div style={{ display: "grid", gap: "10px" }}>
-          <label>Shablonni tanlang:</label>
+          <label>{t("dashboard.selectTemplate")}</label>
           <select
             value={form.template}
             onChange={(e) => setForm({ ...form, template: e.target.value })}
@@ -114,52 +116,53 @@ function Dashboard() {
             <option value="day-and-night">Day and Night</option>
             <option value="bloom">Bloom</option>
             <option value="royal">Royal</option>
+            <option value="bridgerton">Bridgerton</option>
           </select>
 
           <input
-            placeholder="Kuyovning ismi"
+            placeholder={t("dashboard.groom")}
             value={form.groom}
             onChange={(e) => setForm({ ...form, groom: e.target.value })}
             style={{ padding: "8px" }}
           />
 
           <input
-            placeholder="Kelinning ismi"
+            placeholder={t("dashboard.bride")}
             value={form.bride}
             onChange={(e) => setForm({ ...form, bride: e.target.value })}
             style={{ padding: "8px" }}
           />
 
           <input
-            placeholder="Sana (masalan: 2026-08-25)"
+            placeholder={t("dashboard.date")}
             value={form.date}
             onChange={(e) => setForm({ ...form, date: e.target.value })}
             style={{ padding: "8px" }}
           />
 
           <input
-            placeholder="Vaqt (masalan: 18:00)"
+            placeholder={t("dashboard.time")}
             value={form.time}
             onChange={(e) => setForm({ ...form, time: e.target.value })}
             style={{ padding: "8px" }}
           />
 
           <input
-            placeholder="To'yxona nomi"
+            placeholder={t("dashboard.venue")}
             value={form.venue}
             onChange={(e) => setForm({ ...form, venue: e.target.value })}
             style={{ padding: "8px" }}
           />
 
           <input
-            placeholder="To'liq manzil"
+            placeholder={t("dashboard.address")}
             value={form.address}
             onChange={(e) => setForm({ ...form, address: e.target.value })}
             style={{ padding: "8px" }}
           />
 
           <input
-            placeholder="Google Maps Linki"
+            placeholder={t("dashboard.map")}
             value={form.map}
             onChange={(e) => setForm({ ...form, map: e.target.value })}
             style={{ padding: "8px" }}
@@ -170,7 +173,7 @@ function Dashboard() {
             disabled={loading}
             style={{ padding: "10px", marginTop: "10px", cursor: "pointer" }}
           >
-            {loading ? "Yaratilmoqda..." : "Yaratish"}
+            {loading ? t("dashboard.creating") : t("dashboard.create")}
           </button>
         </div>
 
@@ -184,7 +187,7 @@ function Dashboard() {
               onClick={() => navigator.clipboard.writeText(link)}
               style={{ padding: "8px 15px", cursor: "pointer" }}
             >
-              Copy
+              {t("dashboard.copy")}
             </button>
           </div>
         )}
@@ -199,14 +202,14 @@ function Dashboard() {
           backgroundColor: "#f9f9f9",
         }}
       >
-        <h2>Admin Parolini O'zgartirish</h2>
+        <h2>{t("dashboard.changePassword")}</h2>
         <form
           onSubmit={handlePasswordChange}
           style={{ display: "flex", gap: "10px", alignItems: "center" }}
         >
           <input
             type="text"
-            placeholder="Yangi parolni kiriting (min 5 ta belgi)"
+            placeholder={t("dashboard.newPassword")}
             value={newPassword}
             onChange={(e) => setNewPassword(e.target.value)}
             required
@@ -218,7 +221,7 @@ function Dashboard() {
             disabled={passwordLoading}
             style={{ padding: "8px 15px", cursor: "pointer" }}
           >
-            {passwordLoading ? "Saqlanmoqda..." : "Saqlash"}
+            {passwordLoading ? t("dashboard.saving") : t("dashboard.save")}
           </button>
         </form>
         {passwordMessage && (

@@ -1,21 +1,21 @@
-import templates from "../data/templates";
+import { useTranslation } from "react-i18next";
 
+import templates from "../data/templates";
 import TemplateCard from "../components/TemplateCard/TemplateCard";
 
 function Home() {
+  const { t } = useTranslation();
+
   return (
     <>
       <section className="home-hero">
-        <h1>Wedding Invitations</h1>
+        <h1>{t("home.title")}</h1>
 
-        <p>
-          Choose one of our elegant invitation templates and create your
-          unforgettable wedding invitation.
-        </p>
+        <p>{t("home.description")}</p>
       </section>
 
       <section className="templates">
-        <h2>Templates</h2>
+        <h2>{t("home.templates")}</h2>
 
         <div className="templates-grid">
           {templates.map((template) => (

@@ -1,11 +1,14 @@
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 import "./Hero3.scss";
 
 import heroVideo from "../../assets/videos/hero3.mp4";
 
 function Hero3({ invitation }) {
+  const { t, i18n } = useTranslation();
+
   const videoRef = useRef(null);
 
   useEffect(() => {
@@ -15,6 +18,15 @@ function Hero3({ invitation }) {
 
     videoRef.current.play().catch(() => {});
   }, []);
+
+  const eventDate = new Date(invitation.date).toLocaleDateString(
+    i18n.language === "ru" ? "ru-RU" : "uz-UZ",
+    {
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+    },
+  );
 
   return (
     <section className="hero3">
@@ -40,21 +52,22 @@ function Hero3({ invitation }) {
         <svg
           viewBox="-20 -160 440 380"
           className="hero3__curve"
-          aria-label="We're getting married"
+          aria-label={t("hero3.subtitle")}
         >
           <defs>
             <path
               id="hero-arch-mobile"
               d="M 20,200 Q 200,-360 380,200"
               fill="none"
-            ></path>
+            />
           </defs>
+
           <text
             className="fill-foreground font-body font-semibold"
             textAnchor="middle"
           >
             <textPath href="#hero-arch-mobile" startOffset="50%">
-              WE'RE GETTING MARRIED
+              {t("hero3.subtitle")}
             </textPath>
           </text>
         </svg>
@@ -84,7 +97,7 @@ function Hero3({ invitation }) {
             delay: 5,
           }}
         >
-          {invitation.date}
+          {eventDate}
         </motion.p>
       </motion.div>
     </section>

@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 import "./WeddingGift4.scss";
 
 function WeddingGift4() {
+  const { t } = useTranslation();
+
   return (
     <section className="gift4">
       <motion.div
@@ -17,7 +20,7 @@ function WeddingGift4() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
-          Gifts
+          {t("gift4.title")}
         </motion.h2>
 
         <motion.p
@@ -27,11 +30,7 @@ function WeddingGift4() {
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
         >
-          Your presence is the greatest gift of all.
-          <br />
-          If you'd like to honor us with a gift,
-          <br />
-          you may use the card below.
+          {t("gift4.text")}
         </motion.p>
 
         <motion.div
@@ -42,20 +41,14 @@ function WeddingGift4() {
           transition={{ delay: 0.35 }}
         >
           <div className="gift4__header">
-            <h3>Card</h3>
+            <h3>{t("gift4.cardTitle")}</h3>
 
-            <span>Preferred</span>
+            <span>{t("gift4.preferred")}</span>
           </div>
 
           <div className="gift4__divider" />
 
-          <p className="gift4__description">
-            On the wedding day,
-            <br />
-            you can hand us a card
-            <br />
-            or envelope in person.
-          </p>
+          <p className="gift4__description">{t("gift4.description")}</p>
         </motion.div>
       </motion.div>
     </section>

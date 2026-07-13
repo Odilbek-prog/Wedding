@@ -1,8 +1,12 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
+
 import api from "../api/axios";
 import Dashboard from "../components/Dashboard";
 
 function Admin() {
+  const { t } = useTranslation();
+
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -17,27 +21,27 @@ function Admin() {
 
       window.location.reload();
     } catch {
-      alert("Login yoki parol noto'g'ri");
+      alert(t("admin.invalidLogin"));
     }
   };
 
   if (!localStorage.getItem("token")) {
     return (
       <div>
-        <h1>Admin Login</h1>
+        <h1>{t("admin.title")}</h1>
 
         <input
-          placeholder="Username"
+          placeholder={t("admin.username")}
           onChange={(e) => setUsername(e.target.value)}
         />
 
         <input
           type="password"
-          placeholder="Password"
+          placeholder={t("admin.password")}
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <button onClick={login}>Login</button>
+        <button onClick={login}>{t("admin.login")}</button>
       </div>
     );
   }

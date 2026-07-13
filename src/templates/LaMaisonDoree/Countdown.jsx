@@ -1,9 +1,12 @@
 import { motion } from "framer-motion";
 import Countdown from "react-countdown";
+import { useTranslation } from "react-i18next";
 
 import "./Countdown.scss";
 
 function CountdownSection({ invitation }) {
+  const { t } = useTranslation();
+
   return (
     <section className="countdown">
       <motion.div
@@ -13,14 +16,11 @@ function CountdownSection({ invitation }) {
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
       >
-        <span className="countdown__subtitle">Our Special Day Is Coming</span>
+        <span className="countdown__subtitle">{t("countdown.subtitle")}</span>
 
-        <h2>Countdown To Forever</h2>
+        <h2>{t("countdown.title")}</h2>
 
-        <p>
-          Every second brings us closer to the beginning of our beautiful
-          journey together.
-        </p>
+        <p>{t("countdown.description")}</p>
       </motion.div>
 
       <Countdown
@@ -30,19 +30,19 @@ function CountdownSection({ invitation }) {
             {[
               {
                 number: days,
-                label: "Days",
+                label: t("countdown.days"),
               },
               {
                 number: hours,
-                label: "Hours",
+                label: t("countdown.hours"),
               },
               {
                 number: minutes,
-                label: "Minutes",
+                label: t("countdown.minutes"),
               },
               {
                 number: seconds,
-                label: "Seconds",
+                label: t("countdown.seconds"),
               },
             ].map((item, index) => (
               <motion.div

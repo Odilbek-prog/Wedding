@@ -1,10 +1,21 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 import "./Hero4.scss";
 
 import heroVideo from "../../assets/videos/hero4.mp4";
 
 function Hero4({ invitation }) {
+  const { t, i18n } = useTranslation();
+
+  const locale = i18n.language === "ru" ? "ru-RU" : "uz-UZ";
+
+  const eventDate = new Date(invitation.date).toLocaleDateString(locale, {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+
   return (
     <section className="hero4">
       <video className="hero4__video" autoPlay muted loop playsInline>
@@ -25,7 +36,7 @@ function Hero4({ invitation }) {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2 }}
         >
-          WE'RE GETTING MARRIED
+          {t("hero4.top")}
         </motion.p>
 
         <motion.h1
@@ -47,11 +58,7 @@ function Hero4({ invitation }) {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.8 }}
         >
-          {new Date(invitation.date).toLocaleDateString("en-GB", {
-            day: "numeric",
-            month: "long",
-            year: "numeric",
-          })}
+          {eventDate}
         </motion.div>
 
         <motion.a
@@ -60,7 +67,7 @@ function Hero4({ invitation }) {
           whileHover={{ y: -2 }}
           whileTap={{ scale: 0.98 }}
         >
-          RSVP
+          {t("hero4.button")}
         </motion.a>
 
         <motion.div

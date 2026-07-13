@@ -1,9 +1,13 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
+
 import "./RSVP2.scss";
 
 import couple from "../../assets/images/rsvpimg.png";
 
 function RSVP2() {
+  const { t } = useTranslation();
+
   return (
     <section className="rsvp2">
       <motion.div
@@ -23,18 +27,18 @@ function RSVP2() {
           transition={{ duration: 1.2 }}
         />
 
-        <h2>RSVP</h2>
+        <h2>{t("rsvp2.title")}</h2>
 
-        <p className="rsvp2__subtitle">We hope you can make it</p>
+        <p className="rsvp2__subtitle">{t("rsvp2.subtitle")}</p>
 
         <form className="rsvp2__form">
-          <input placeholder="Full Name" />
+          <input placeholder={t("rsvp2.fullName")} />
 
-          <input placeholder="Phone Number" />
+          <input placeholder={t("rsvp2.phoneNumber")} />
 
-          <textarea placeholder="Leave your wishes..." />
+          <textarea placeholder={t("rsvp2.wishes")} />
 
-          <button type="submit">Submit Response</button>
+          <button type="submit">{t("rsvp2.submit")}</button>
         </form>
       </motion.div>
     </section>

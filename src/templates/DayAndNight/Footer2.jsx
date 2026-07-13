@@ -1,7 +1,19 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
+
 import "./Footer2.scss";
 
 function Footer2({ invitation }) {
+  const { t, i18n } = useTranslation();
+
+  const locale = i18n.language === "ru" ? "ru-RU" : "uz-UZ";
+
+  const eventDate = new Date(invitation.date).toLocaleDateString(locale, {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+
   return (
     <footer className="footer2">
       <motion.div
@@ -28,7 +40,7 @@ function Footer2({ invitation }) {
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
         >
-          {invitation.date}
+          {eventDate}
         </motion.p>
 
         <motion.p
@@ -38,7 +50,7 @@ function Footer2({ invitation }) {
           viewport={{ once: true }}
           transition={{ delay: 0.4 }}
         >
-          We can't wait to celebrate this beautiful day with you.
+          {t("footer2.text")}
         </motion.p>
       </motion.div>
     </footer>

@@ -1,0 +1,255 @@
+{
+  "home": {
+    "title": "To'y taklifnomalari",
+    "description": "Bizning nafis taklifnoma shablonlarimizdan birini tanlang va unutilmas to'y taklifnomangizni yarating.",
+    "templates": "Shablonlar"
+  },
+  "admin": {
+    "title": "Admin panel",
+    "username": "Foydalanuvchi nomi",
+    "password": "Parol",
+    "login": "Kirish",
+    "invalidLogin": "Login yoki parol noto'g'ri"
+  },
+  "introVideo": {
+    "tapAnywhere": "Istalgan joyga bosing"
+  },
+  "countdown": {
+    "subtitle": "Bizning unutilmas kunimiz yaqinlashmoqda",
+    "title": "Abadiylikkacha hisob",
+    "description": "Har bir soniya bizni birgalikdagi go'zal hayotimizning boshlanishiga yanada yaqinlashtiradi.",
+    "days": "Kun",
+    "hours": "Soat",
+    "minutes": "Daqiqa",
+    "seconds": "Soniya"
+  },
+  "dressCode": {
+    "title": "Kiyim uslubi",
+    "ladiesLabel": "XONIMLAR UCHUN",
+    "ladiesTitle": "Oq kokteyl uslubi",
+    "ladiesDescription": "Yumshoq, och ranglardagi nafis liboslar tavsiya etiladi.",
+    "gentlemenLabel": "JANOBLAR UCHUN",
+    "gentlemenTitle": "Black Tie",
+    "gentlemenDescription": "Oq ko'ylak va qora tufli bilan qora kostyum yoki smoking tavsiya etiladi."
+  },
+  "footer": {
+    "subtitle": "Siz bilan bu kunni nishonlashni intiqlik bilan kutamiz",
+    "thanks": "Bu unutilmas kunni birgalikda nishonlashni sabrsizlik bilan kutamiz.",
+    "copyright": "Hayotimizning ushbu muhim qismida biz bilan birga bo'lganingiz uchun rahmat."
+  },
+  "hero": {
+    "invite": "Oila a'zolari bilan birgalikda"
+  },
+  "intro": {
+    "subtitle": "BIZ TURMUSH QURYAPMIZ",
+    "tap": "Taklifnomani ochish uchun bosing"
+  },
+  "map": {
+    "subtitle": "To'y manzili",
+    "button": "Xaritada ko'rish"
+  },
+  "rsvp": {
+    "subtitle": "Siz bilan ushbu quvonchli kunni nishonlashni intiqlik bilan kutamiz",
+    "title": "RSVP",
+    "fullName": "To'liq ism",
+    "phoneNumber": "Telefon raqami",
+    "wishes": "Tilaklaringizni yozing...",
+    "submit": "Javobni yuborish"
+  },
+  "gift": {
+    "subtitle": "To'y sovg'asi",
+    "title": "To'y sovg'asi",
+    "text": "Sizning tashrifingiz biz uchun eng katta sovg'adir.",
+    "description": "Agar bizni sovg'a bilan xursand qilmoqchi bo'lsangiz, pul ko'rinishidagi sovg'ani afzal ko'ramiz. Bank ma'lumotlari quyida keltirilgan.",
+    "cardTitle": "Karta",
+    "preferred": "Tavsiya etiladi",
+    "cardDescription": "To'y kuni kartani yoki konvertni shaxsan bizga topshirishingiz mumkin."
+  },
+  "countdown4": {
+    "title": "Hisob",
+    "until": "QOLGAN VAQT",
+    "days": "KUN",
+    "hours": "SOAT",
+    "minutes": "DAQIQA"
+  },
+  "dressCode4": {
+    "title": "Kiyim uslubi",
+    "womenTitle": "Ayollar",
+    "womenText": "Kokteyl yoki rasmiy libos",
+    "menTitle": "Erkaklar",
+    "menText": "To'q rangli kostyum va galstuk"
+  },
+  "hero4": {
+    "top": "BIZ TURMUSH QURYAPMIZ",
+    "button": "RSVP"
+  },
+  "map4": {
+    "title": "To'y manzili",
+    "subtitle": "Bayramni nishonlaydigan joyimiz",
+    "button": "Xaritada ochish"
+  },
+  "rsvp4": {
+    "title": "RSVP",
+    "subtitle": "Ishtirok eta olishingizni bizga bildiring",
+    "fullName": "To'liq ism",
+    "fullNamePlaceholder": "To'liq ismingizni kiriting",
+    "phoneNumber": "Telefon raqami",
+    "phonePlaceholder": "+998 90 123 45 67",
+    "wishes": "Tilaklaringiz",
+    "wishesPlaceholder": "Tilaklaringizni yozing...",
+    "submit": "Javobni yuborish"
+  },
+  "gift4": {
+    "title": "To'y sovg'asi",
+    "text": "Sizning tashrifingiz biz uchun eng katta sovg'adir.\nAgar bizni sovg'a bilan xursand qilmoqchi bo'lsangiz,\nquyidagi kartadan foydalanishingiz mumkin.",
+    "cardTitle": "Karta",
+    "preferred": "Tavsiya etiladi",
+    "description": "To'y kuni kartani yoki konvertni shaxsan bizga topshirishingiz mumkin."
+  },
+  "countdown2": {
+    "script": "Hisob",
+    "title": "HAYOTIMIZDAGI ENG MUHIM KUNGACHA",
+    "days": "KUN",
+    "hours": "SOAT",
+    "minutes": "DAQIQA",
+    "seconds": "SONIYA"
+  },
+  "dressCode2": {
+    "title": "Kiyim uslubi",
+    "subtitle": "KICHIK ESLATMALAR",
+    "cardTitle": "Rasmiy kiyim",
+    "text": "Sizdan ushbu unutilmas kunimizga rasmiy kiyimda tashrif buyurishingizni so'raymiz.",
+    "note": "Iltimos, oq rangli kiyim kiymang — u faqat kelin uchun ajratilgan.",
+    "footer": "Xonimlarga ingichka poshnali tuflidan voz kechishni tavsiya qilamiz.\nMarosim notekis yerli dala hovlisida bo'lib o'tadi, shuning uchun platformali, keng poshnali, past poshnali yoki tekis oyoq kiyimlar ancha qulay bo'ladi."
+  },
+  "footer2": {
+    "text": "Siz bilan ushbu go'zal kunni nishonlashni sabrsizlik bilan kutmoqdamiz."
+  },
+  "hero2": {
+    "subtitle": "BIZ TURMUSH QURYAPMIZ"
+  },
+  "map2": {
+    "subtitle": "Manzil",
+    "button": "Xaritani ochish"
+  },
+  "rsvp2": {
+    "title": "RSVP",
+    "subtitle": "Sizni to'yimizda ko'rishga umid qilamiz",
+    "fullName": "To'liq ism",
+    "phoneNumber": "Telefon raqami",
+    "wishes": "Tilaklaringizni yozing...",
+    "submit": "Javobni yuborish"
+  },
+  "gift2": {
+    "title": "To'y sovg'asi",
+    "subtitle": "E'TIBORLI TUHFA",
+    "text": "Sizning tashrifingiz biz uchun eng katta sovg'adir.\nAgar bizni sovg'a bilan xursand qilmoqchi bo'lsangiz, quyidagi kartadan foydalanishingiz mumkin.",
+    "card": "Karta",
+    "preferred": "Tavsiya etiladi",
+    "methodText": "To'y kuni kartani yoki konvertni shaxsan bizga topshirishingiz mumkin."
+  },
+  "countdown5": {
+    "title": "Hisob",
+    "until": "Gacha",
+    "days": "Kun",
+    "hours": "Soat",
+    "minutes": "Daqiqa",
+    "seconds": "Soniya"
+  },
+  "dress5": {
+    "title": "Kiyim uslubi",
+    "subtitle": "Rasmiy Black Tie",
+    "text1": "Shamlar yog'dusidagi nafis oqshom ruhiga mos ravishda sizni eng didli Black Tie uslubidagi kiyimlarda kutamiz. Janoblar uchun smoking yoki to'q rangli rasmiy kostyum, xonimlar uchun esa uzun kechki ko'ylak yoki nafis kokteyl libosi tavsiya etiladi.",
+    "text2": "Shampan, och pushti, changsimon ko'k, yashil, olxo'ri va yarim tun ranglari kabi mayin romantik tuslarni tanlang. Maysazor va shag'al yo'laklarda qulay yurish uchun mos oyoq kiyim kiying. Oqartirilgan va fil suyagi ranglarini iltimos kelin uchun qoldiring."
+  },
+  "hero5": {
+    "subtitle": "NIKOH MAROSIMI"
+  },
+  "map5": {
+    "title1": "Biz bilan birga",
+    "title2": "To'yimizni nishonlang",
+    "description1": "Siz bilan ushbu",
+    "description2": "unutilmas kunni nishonlashdan juda xursandmiz.",
+    "timeLocation": "Vaqt va manzil",
+    "button": "Xaritada ko'rish"
+  },
+  "rsvp5": {
+    "title": "RSVP",
+    "subtitle": "Sizni to'yimizda ko'rishdan xursand bo'lamiz.",
+    "fullName": "To'liq ism",
+    "fullNamePlaceholder": "To'liq ismingizni kiriting",
+    "phone": "Telefon raqami",
+    "wishes": "Tilaklaringiz",
+    "wishesPlaceholder": "Tilaklaringizni yozing...",
+    "button": "Javobni yuborish",
+    "success": "Rahmat! Javobingiz qabul qilindi."
+  },
+  "gift5": {
+    "title": "Sovg'alar",
+    "description": "Sizning tashrifingiz biz uchun eng katta sovg'adir. Agar bizni sovg'a bilan tabriklamoqchi bo'lsangiz, quyidagi ma'lumotlardan foydalanishingiz mumkin.",
+    "cardPreferred": "Karta afzal",
+    "cardInfo": "To'y kuni bizga kartochka yoki konvertni shaxsan topshirishingiz mumkin."
+  },
+  "countdown3": {
+    "title": "Ortga sanoq",
+    "until": "Gacha",
+    "days": "KUN",
+    "hours": "SOAT",
+    "minutes": "DAQIQA"
+  },
+  "dresscode3": {
+    "title": "Kiyim uslubi",
+    "subtitle": "Rasmiy Black Tie"
+  },
+  "hero3": {
+    "subtitle": "BIZ TURMUSH QURYAPMIZ"
+  },
+  "map3": {
+    "subtitle1": "Nikoh marosimi",
+    "subtitle2": "va tantana",
+    "small": "BIZ NISHONLAYDIGAN JOY",
+    "button": "Xaritada ochish"
+  },
+  "rsvp3": {
+    "title": "RSVP",
+    "subtitle": "Iltimos, imkon qadar tezroq javob bering",
+    "fullName": "To'liq ism",
+    "fullNamePlaceholder": "To'liq ismingizni kiriting",
+    "phone": "Telefon raqami",
+    "wishes": "Tilaklaringiz",
+    "wishesPlaceholder": "Tilaklaringizni yozing...",
+    "button": "Tilak yuborish",
+    "success": "Javobingiz uchun rahmat!"
+  },
+  "templateCard": {
+    "view": "Ko'rish",
+    "contact": "Bog'lanish"
+  },
+  "dashboard": {
+    "title": "Boshqaruv paneli",
+    "logout": "Chiqish",
+
+    "createInvitation": "Taklifnoma yaratish",
+    "selectTemplate": "Shablonni tanlang",
+
+    "groom": "Kuyovning ismi",
+    "bride": "Kelinning ismi",
+    "date": "Sana (masalan: 2026-08-25)",
+    "time": "Vaqt (masalan: 18:00)",
+    "venue": "To'yxona nomi",
+    "address": "To'liq manzil",
+    "map": "Google yoki Yandex Maps havolasi",
+
+    "create": "Yaratish",
+    "creating": "Yaratilmoqda...",
+    "copy": "Nusxalash",
+
+    "changePassword": "Admin parolini o'zgartirish",
+    "newPassword": "Yangi parolni kiriting (kamida 5 ta belgi)",
+    "save": "Saqlash",
+    "saving": "Saqlanmoqda...",
+
+    "alertFillNames": "Iltimos, kelin va kuyov ismini kiriting!",
+    "alertCreateError": "Taklifnoma yaratishda xatolik yuz berdi!"
+  }
+}

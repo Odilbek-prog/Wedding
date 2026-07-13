@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 import "./Countdown5.scss";
 
@@ -7,6 +8,8 @@ import curtainLeft from "../../assets/images/curtain-left.png";
 import curtainRight from "../../assets/images/curtain-right.png";
 
 function Countdown5({ invitation }) {
+  const { t, i18n } = useTranslation();
+
   const calculateTimeLeft = () => {
     const difference = new Date(invitation.date) - new Date();
 
@@ -46,7 +49,9 @@ function Countdown5({ invitation }) {
     return () => clearInterval(interval);
   }, []);
 
-  const eventDate = new Date(invitation.date).toLocaleDateString("en-US", {
+  const locale = i18n.language === "ru" ? "ru-RU" : "uz-UZ";
+
+  const eventDate = new Date(invitation.date).toLocaleDateString(locale, {
     day: "numeric",
     month: "long",
     year: "numeric",
@@ -73,29 +78,31 @@ function Countdown5({ invitation }) {
         viewport={{ once: true }}
         transition={{ duration: 1 }}
       >
-        <h2>Countdown</h2>
+        <h2>{t("countdown5.title")}</h2>
 
-        <p className="countdown5__subtitle">Until {eventDate}</p>
+        <p className="countdown5__subtitle">
+          {t("countdown5.until")} {eventDate}
+        </p>
 
         <div className="countdown5__timer">
           <div className="countdown5__item">
             <span>{timeLeft.days}</span>
-            <small>Days</small>
+            <small>{t("countdown5.days")}</small>
           </div>
 
           <div className="countdown5__item">
             <span>{timeLeft.hours}</span>
-            <small>Hours</small>
+            <small>{t("countdown5.hours")}</small>
           </div>
 
           <div className="countdown5__item">
             <span>{timeLeft.minutes}</span>
-            <small>Minutes</small>
+            <small>{t("countdown5.minutes")}</small>
           </div>
 
           <div className="countdown5__item">
             <span>{timeLeft.seconds}</span>
-            <small>Seconds</small>
+            <small>{t("countdown5.seconds")}</small>
           </div>
         </div>
       </motion.div>

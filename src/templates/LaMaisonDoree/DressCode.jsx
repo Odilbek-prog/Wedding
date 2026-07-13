@@ -1,9 +1,14 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
+
 import ladiesFlowers from "../../assets/images/bouquet.png";
 import menFlowers from "../../assets/images/menflower.png";
+
 import "./DressCode.scss";
 
 function DressCode() {
+  const { t } = useTranslation();
+
   return (
     <section className="dress">
       <motion.h2
@@ -12,7 +17,7 @@ function DressCode() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
-        Dress Code
+        {t("dressCode.title")}
       </motion.h2>
 
       <div className="dress__wrapper">
@@ -28,11 +33,11 @@ function DressCode() {
             alt=""
           />
 
-          <span className="dress__day">FOR LADIES</span>
+          <span className="dress__day">{t("dressCode.ladiesLabel")}</span>
 
-          <h3>White Cocktail Attire</h3>
+          <h3>{t("dressCode.ladiesTitle")}</h3>
 
-          <p>Elegant dresses in soft neutral tones are highly appreciated.</p>
+          <p>{t("dressCode.ladiesDescription")}</p>
 
           <div className="dress__colors">
             <span style={{ background: "#fff" }} />
@@ -54,11 +59,11 @@ function DressCode() {
             alt=""
           />
 
-          <span className="dress__day">FOR GENTLEMEN</span>
+          <span className="dress__day">{t("dressCode.gentlemenLabel")}</span>
 
-          <h3>Black Tie</h3>
+          <h3>{t("dressCode.gentlemenTitle")}</h3>
 
-          <p>Black suit or tuxedo with white shirt and black shoes.</p>
+          <p>{t("dressCode.gentlemenDescription")}</p>
 
           <div className="dress__colors">
             <span style={{ background: "#111" }} />

@@ -1,8 +1,12 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import "./RSVP5.scss";
 
 const RSVP5 = () => {
+  const { t } = useTranslation();
+
   const [attendance, setAttendance] = useState("yes");
+
   const [formData, setFormData] = useState({
     fullName: "",
     phoneNumber: "",
@@ -10,35 +14,46 @@ const RSVP5 = () => {
   });
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form data:", { attendance, ...formData });
-    alert("Thank you! We have received your response.");
+
+    console.log("Form data:", {
+      attendance,
+      ...formData,
+    });
+
+    alert(t("rsvp5.success"));
   };
 
   return (
     <section className="rsvp5">
-      <h2 className="rsvp5__title">RSVP</h2>
-      <p className="rsvp5__subtitle">We hope you can make it.</p>
+      <h2 className="rsvp5__title">{t("rsvp5.title")}</h2>
+
+      <p className="rsvp5__subtitle">{t("rsvp5.subtitle")}</p>
 
       <form className="rsvp5__form" onSubmit={handleSubmit}>
         <div className="rsvp5__group">
-          <label className="rsvp5__label">Full name *</label>
+          <label className="rsvp5__label">{t("rsvp5.fullName")} *</label>
+
           <input
             className="rsvp5__input"
             type="text"
             name="fullName"
-            placeholder="Your full name"
+            placeholder={t("rsvp5.fullNamePlaceholder")}
             required
             onChange={handleChange}
           />
         </div>
 
         <div className="rsvp5__group">
-          <label className="rsvp5__label">Phone number *</label>
+          <label className="rsvp5__label">{t("rsvp5.phone")} *</label>
+
           <input
             className="rsvp5__input"
             type="tel"
@@ -50,18 +65,19 @@ const RSVP5 = () => {
         </div>
 
         <div className="rsvp5__group">
-          <label className="rsvp5__label">Leave your wishes</label>
+          <label className="rsvp5__label">{t("rsvp5.wishes")}</label>
+
           <textarea
             className="rsvp5__textarea"
             name="wishes"
             rows="4"
-            placeholder="Write your wishes here..."
+            placeholder={t("rsvp5.wishesPlaceholder")}
             onChange={handleChange}
           />
         </div>
 
         <button type="submit" className="rsvp5__button">
-          Send Response
+          {t("rsvp5.button")}
         </button>
       </form>
     </section>

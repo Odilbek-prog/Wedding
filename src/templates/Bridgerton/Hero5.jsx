@@ -1,10 +1,16 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
+
 import "./Hero5.scss";
 
 import heroVideo from "../../assets/videos/hero5.mp4";
 
 function Hero5({ invitation }) {
-  const eventDate = new Date(invitation.date).toLocaleDateString("en-US", {
+  const { t, i18n } = useTranslation();
+
+  const locale = i18n.language === "ru" ? "ru-RU" : "uz-UZ";
+
+  const eventDate = new Date(invitation.date).toLocaleDateString(locale, {
     day: "numeric",
     month: "long",
     year: "numeric",
@@ -33,7 +39,7 @@ function Hero5({ invitation }) {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4 }}
         >
-          THE WEDDING OF
+          {t("hero5.subtitle")}
         </motion.span>
 
         <motion.h1

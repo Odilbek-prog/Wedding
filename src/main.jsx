@@ -6,6 +6,7 @@ import "./styles/global.scss";
 import Lenis from "lenis";
 import "lenis/dist/lenis.css";
 import "./index.scss";
+import "./i18n/i18n";
 
 const lenis = new Lenis();
 

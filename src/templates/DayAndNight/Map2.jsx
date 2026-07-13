@@ -1,11 +1,14 @@
 import { motion } from "framer-motion";
 import { FaLocationDot } from "react-icons/fa6";
+import { useTranslation } from "react-i18next";
 
 import "./Map2.scss";
 
 import venue from "../../assets/images/venue2.png";
 
 function Map2({ invitation }) {
+  const { t } = useTranslation();
+
   return (
     <section className="map2">
       <motion.div
@@ -15,7 +18,7 @@ function Map2({ invitation }) {
         viewport={{ once: true }}
         transition={{ duration: 1 }}
       >
-        <span className="map2__subtitle">Location</span>
+        <span className="map2__subtitle">{t("map2.subtitle")}</span>
 
         <h2>{invitation.venue}</h2>
 
@@ -25,7 +28,7 @@ function Map2({ invitation }) {
 
         <motion.img
           src={venue}
-          alt=""
+          alt={invitation.venue}
           className="map2__image"
           whileHover={{ scale: 1.04 }}
           transition={{ duration: 0.6 }}
@@ -38,7 +41,8 @@ function Map2({ invitation }) {
           className="map2__button"
         >
           <FaLocationDot />
-          <span>Open Google Maps</span>
+
+          <span>{t("map2.button")}</span>
         </a>
       </motion.div>
     </section>

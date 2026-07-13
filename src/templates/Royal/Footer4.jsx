@@ -1,11 +1,16 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 import "./Footer4.scss";
 
 import rings from "../../assets/images/rings.png";
 
 function Footer4({ invitation }) {
-  const eventDate = new Date(invitation.date).toLocaleDateString("en-US", {
+  const { i18n } = useTranslation();
+
+  const locale = i18n.language === "ru" ? "ru-RU" : "uz-UZ";
+
+  const eventDate = new Date(invitation.date).toLocaleDateString(locale, {
     day: "numeric",
     month: "long",
     year: "numeric",

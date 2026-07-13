@@ -1,7 +1,11 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
+
 import "./Intro.scss";
 
 function Intro({ invitation, opened, onOpen, preview }) {
+  const { t } = useTranslation();
+
   return (
     <motion.section
       className={`intro ${preview ? "intro--preview" : ""}`}
@@ -9,8 +13,6 @@ function Intro({ invitation, opened, onOpen, preview }) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      {/* LEFT DOOR */}
-
       <motion.div
         className="intro__door intro__door--left"
         animate={
@@ -26,8 +28,6 @@ function Intro({ invitation, opened, onOpen, preview }) {
           ease: [0.22, 1, 0.36, 1],
         }}
       />
-
-      {/* RIGHT DOOR */}
 
       <motion.div
         className="intro__door intro__door--right"
@@ -45,8 +45,6 @@ function Intro({ invitation, opened, onOpen, preview }) {
         }}
       />
 
-      {/* CENTER */}
-
       <motion.div
         className="intro__content"
         animate={
@@ -61,7 +59,7 @@ function Intro({ invitation, opened, onOpen, preview }) {
           duration: 0.7,
         }}
       >
-        <span className="intro__subtitle">WE ARE GETTING MARRIED</span>
+        <span className="intro__subtitle">{t("intro.subtitle")}</span>
 
         <div className="intro__divider"></div>
 
@@ -72,7 +70,9 @@ function Intro({ invitation, opened, onOpen, preview }) {
 
           {invitation.bride}
         </h1>
+
         <div className="intro__divider"></div>
+
         <motion.div
           className="intro__tap"
           onClick={onOpen}
@@ -84,7 +84,7 @@ function Intro({ invitation, opened, onOpen, preview }) {
             duration: 2,
           }}
         >
-          Tap To Open Invitation
+          {t("intro.tap")}
         </motion.div>
       </motion.div>
     </motion.section>

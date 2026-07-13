@@ -1,8 +1,10 @@
 import "./TemplateCard.scss";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 function TemplateCard({ template }) {
+  const { t } = useTranslation();
+
   return (
     <motion.div
       className="template-card"
@@ -21,7 +23,7 @@ function TemplateCard({ template }) {
             rel="noopener noreferrer"
             className="template-card__btn"
           >
-            Ko'rish
+            {t("templateCard.view")}
           </a>
 
           <a
@@ -30,7 +32,7 @@ function TemplateCard({ template }) {
             rel="noreferrer"
             className="template-card__btn"
           >
-            Bog'lanish
+            {t("templateCard.contact")}
           </a>
         </div>
       </div>
