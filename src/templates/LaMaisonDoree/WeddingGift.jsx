@@ -41,6 +41,21 @@ function WeddingGift() {
           If you wish to honour us with a gift, we kindly prefer monetary
           contributions. Bank details are provided below.
         </p>
+        <div className="gift__preferred">
+          <h3>Card</h3>
+
+          <span>preferred</span>
+
+          <div className="gift__divider" />
+
+          <p>
+            On the wedding day,
+            <br />
+            you can hand us a card
+            <br />
+            or envelope in person.
+          </p>
+        </div>
       </motion.div>
     </section>
   );
