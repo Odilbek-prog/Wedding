@@ -32,24 +32,6 @@ function WeddingGift4() {
         >
           {t("gift4.text")}
         </motion.p>
-
-        <motion.div
-          className="gift4__card"
-          initial={{ opacity: 0, scale: 0.96 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.35 }}
-        >
-          <div className="gift4__header">
-            <h3>{t("gift4.cardTitle")}</h3>
-
-            <span>{t("gift4.preferred")}</span>
-          </div>
-
-          <div className="gift4__divider" />
-
-          <p className="gift4__description">{t("gift4.description")}</p>
-        </motion.div>
       </motion.div>
     </section>
   );

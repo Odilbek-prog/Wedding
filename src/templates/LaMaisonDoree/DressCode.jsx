@@ -38,13 +38,6 @@ function DressCode() {
           <h3>{t("dressCode.ladiesTitle")}</h3>
 
           <p>{t("dressCode.ladiesDescription")}</p>
-
-          <div className="dress__colors">
-            <span style={{ background: "#fff" }} />
-            <span style={{ background: "#f4efe7" }} />
-            <span style={{ background: "#e4d4bb" }} />
-            <span style={{ background: "#c9ae85" }} />
-          </div>
         </motion.div>
 
         <motion.div
@@ -64,13 +57,6 @@ function DressCode() {
           <h3>{t("dressCode.gentlemenTitle")}</h3>
 
           <p>{t("dressCode.gentlemenDescription")}</p>
-
-          <div className="dress__colors">
-            <span style={{ background: "#111" }} />
-            <span style={{ background: "#444" }} />
-            <span style={{ background: "#777" }} />
-            <span style={{ background: "#fff" }} />
-          </div>
         </motion.div>
       </div>
     </section>

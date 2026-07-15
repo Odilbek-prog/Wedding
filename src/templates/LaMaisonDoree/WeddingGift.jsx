@@ -34,18 +34,6 @@ function WeddingGift() {
         <h2>{t("gift.title")}</h2>
 
         <p className="gift__text">{t("gift.text")}</p>
-
-        <p className="gift__desc">{t("gift.description")}</p>
-
-        <div className="gift__preferred">
-          <h3>{t("gift.cardTitle")}</h3>
-
-          <span>{t("gift.preferred")}</span>
-
-          <div className="gift__divider" />
-
-          <p>{t("gift.cardDescription")}</p>
-        </div>
       </motion.div>
     </section>
   );

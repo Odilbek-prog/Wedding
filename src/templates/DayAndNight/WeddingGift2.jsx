@@ -25,16 +25,6 @@ function WeddingGift2() {
         <div className="gift2__card">
           <p className="gift2__text">{t("gift2.text")}</p>
 
-          <div className="gift2__method">
-            <div className="gift2__methodHead">
-              <span>{t("gift2.card")}</span>
-
-              <small>{t("gift2.preferred")}</small>
-            </div>
-
-            <p className="gift2__methodText">{t("gift2.methodText")}</p>
-          </div>
-
           <img src={flowers} alt="" className="gift2__flowers" />
         </div>
       </motion.div>

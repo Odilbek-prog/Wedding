@@ -101,7 +101,7 @@
   },
   "gift4": {
     "title": "To'y sovg'asi",
-    "text": "Sizning tashrifingiz biz uchun eng katta sovg'adir.\nAgar bizni sovg'a bilan xursand qilmoqchi bo'lsangiz,\nquyidagi kartadan foydalanishingiz mumkin.",
+    "text": "Sizning tashrifingiz biz uchun eng katta sovg'adir.",
     "cardTitle": "Karta",
     "preferred": "Tavsiya etiladi",
     "description": "To'y kuni kartani yoki konvertni shaxsan bizga topshirishingiz mumkin."
@@ -143,7 +143,7 @@
   "gift2": {
     "title": "To'y sovg'asi",
     "subtitle": "E'TIBORLI TUHFA",
-    "text": "Sizning tashrifingiz biz uchun eng katta sovg'adir.\nAgar bizni sovg'a bilan xursand qilmoqchi bo'lsangiz, quyidagi kartadan foydalanishingiz mumkin.",
+    "text": "Sizning tashrifingiz biz uchun eng katta sovg'adir.",
     "card": "Karta",
     "preferred": "Tavsiya etiladi",
     "methodText": "To'y kuni kartani yoki konvertni shaxsan bizga topshirishingiz mumkin."
@@ -186,7 +186,7 @@
   },
   "gift5": {
     "title": "Sovg'alar",
-    "description": "Sizning tashrifingiz biz uchun eng katta sovg'adir. Agar bizni sovg'a bilan tabriklamoqchi bo'lsangiz, quyidagi ma'lumotlardan foydalanishingiz mumkin.",
+    "description": "Sizning tashrifingiz biz uchun eng katta sovg'adir.",
     "cardPreferred": "Karta afzal",
     "cardInfo": "To'y kuni bizga kartochka yoki konvertni shaxsan topshirishingiz mumkin."
   },
