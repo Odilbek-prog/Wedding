@@ -6,13 +6,11 @@ import "./Footer2.scss";
 function Footer2({ invitation }) {
   const { t, i18n } = useTranslation();
 
-  const locale = i18n.language === "ru" ? "ru-RU" : "uz-UZ";
+  const weddingDate = new Date(invitation.date);
 
-  const eventDate = new Date(invitation.date).toLocaleDateString(locale, {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
+  const month = t(`months.${weddingDate.getMonth()}`);
+  const day = weddingDate.getDate();
+  const year = weddingDate.getFullYear();
 
   return (
     <footer className="footer2">
@@ -40,17 +38,7 @@ function Footer2({ invitation }) {
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
         >
-          {eventDate}
-        </motion.p>
-
-        <motion.p
-          className="footer2__text"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4 }}
-        >
-          {t("footer2.text")}
+          {month} {day}, {year}
         </motion.p>
       </motion.div>
     </footer>

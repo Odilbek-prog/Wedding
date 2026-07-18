@@ -21,9 +21,9 @@
 .gift2__title {
   display: block;
 
-  font-family: "Monsieur La Doulaise", cursive;
+  font-family: "Alex";
 
-  font-size: 58px;
+  font-size: 70px !important;
 
   color: #72684b;
 
@@ -167,10 +167,6 @@
 @media (max-width: 768px) {
   .gift2 {
     padding: 90px 18px;
-  }
-
-  .gift2__title {
-    font-size: 48px;
   }
 
   .gift2__subtitle {

@@ -109,7 +109,7 @@
 
   gap: 15px;
 
-  font-family: "Monsieur La Doulaise", cursive;
+  font-family: "Alex";
 
   font-size: clamp(72px, 9vw, 150px);
 
@@ -138,6 +138,7 @@
   letter-spacing: 2px;
 
   color: #ece7dc;
+  text-transform: uppercase;
 }
 
 @media (max-width: 768px) {
@@ -163,5 +164,29 @@
 
   .hero2 p {
     font-size: 22px;
+  }
+}
+.hero2__loader {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.hero2__spinner {
+  width: 70px;
+  height: 70px;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: hero2Spin 0.8s linear infinite;
+}
+
+@keyframes hero2Spin {
+  to {
+    transform: rotate(360deg);
   }
 }

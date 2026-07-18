@@ -9,13 +9,11 @@ import "./Map.scss";
 function Map({ invitation }) {
   const { t, i18n } = useTranslation();
 
-  const locale = i18n.language === "ru" ? "ru-RU" : "uz-UZ";
+  const weddingDate = new Date(invitation.date);
 
-  const formattedDate = new Date(invitation.date).toLocaleDateString(locale, {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
+  const month = t(`months.${weddingDate.getMonth()}`);
+  const day = weddingDate.getDate();
+  const year = weddingDate.getFullYear();
 
   return (
     <section className="map">
@@ -43,7 +41,7 @@ function Map({ invitation }) {
         <h2>{invitation.venue}</h2>
 
         <p className="map__date">
-          {formattedDate}
+          {day} {month} {year}
           <br />
           {invitation.time}
         </p>

@@ -13,11 +13,16 @@ function Hero2({ invitation }) {
   const videoRef = useRef(null);
 
   const [dayMode, setDayMode] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  const weddingDate = new Date(invitation.date);
+
+  const month = t(`months.${weddingDate.getMonth()}`);
+  const day = weddingDate.getDate();
+  const year = weddingDate.getFullYear();
 
   useEffect(() => {
     const video = videoRef.current;
-
-    video.play();
 
     const handleEnd = () => {
       setDayMode(true);
@@ -30,59 +35,86 @@ function Hero2({ invitation }) {
     };
   }, []);
 
+  const handleVideoLoaded = async () => {
+    const video = videoRef.current;
+
+    try {
+      await video.play();
+    } catch (e) {
+      console.log(e);
+    }
+
+    setLoading(false);
+  };
+
   const changeTheme = async () => {
     const video = videoRef.current;
+
+    if (!video) return;
 
     if (dayMode) {
       video.pause();
       video.currentTime = 0;
-
       setDayMode(false);
-
       return;
     }
 
     video.currentTime = 0;
 
-    await video.play();
+    try {
+      await video.play();
+    } catch (e) {
+      console.log(e);
+    }
   };
-
-  const locale = i18n.language === "ru" ? "ru-RU" : "uz-UZ";
-
-  const eventDate = new Date(invitation.date).toLocaleDateString(locale, {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
 
   return (
     <section className="hero2">
-      <video ref={videoRef} className="hero2__video" muted playsInline>
+      {loading && (
+        <div className="hero2__loader">
+          <div className="hero2__spinner"></div>
+        </div>
+      )}
+
+      <video
+        ref={videoRef}
+        className="hero2__video"
+        muted
+        playsInline
+        preload="auto"
+        onLoadedData={handleVideoLoaded}
+      >
         <source src={heroVideo} type="video/mp4" />
       </video>
 
-      <div className="hero2__overlay" />
+      {!loading && (
+        <>
+          <div className="hero2__overlay" />
 
-      <button className="hero2__theme" onClick={changeTheme}>
-        {dayMode ? <IoSunny /> : <IoMoon />}
-      </button>
+          <button className="hero2__theme" onClick={changeTheme}>
+            {dayMode ? <IoSunny /> : <IoMoon />}
+          </button>
 
-      <motion.div
-        className="hero2__content"
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-      >
-        <span className="hero2__subtitle">{t("hero2.subtitle")}</span>
+          <motion.div
+            className="hero2__content"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+          >
+            <span className="hero2__subtitle">{t("hero2.subtitle")}</span>
 
-        <h1>
-          {invitation.groom}
-          <span>&</span>
-          {invitation.bride}
-        </h1>
+            <h1>
+              {invitation.groom}
+              <span>&</span>
+              {invitation.bride}
+            </h1>
 
-        <p>{eventDate}</p>
-      </motion.div>
+            <p>
+              {month} {day}, {year}
+            </p>
+          </motion.div>
+        </>
+      )}
     </section>
   );
 }
