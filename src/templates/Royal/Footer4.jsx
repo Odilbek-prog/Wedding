@@ -6,15 +6,13 @@ import "./Footer4.scss";
 import rings from "../../assets/images/rings.png";
 
 function Footer4({ invitation }) {
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
 
-  const locale = i18n.language === "ru" ? "ru-RU" : "uz-UZ";
+  const weddingDate = new Date(invitation.date);
 
-  const eventDate = new Date(invitation.date).toLocaleDateString(locale, {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
+  const month = t(`months.${weddingDate.getMonth()}`);
+  const day = weddingDate.getDate();
+  const year = weddingDate.getFullYear();
 
   return (
     <footer className="footer4">
@@ -45,7 +43,9 @@ function Footer4({ invitation }) {
 
         <div className="footer4__divider" />
 
-        <p className="footer4__date">{eventDate}</p>
+        <p className="footer4__date">
+          {day} {month} {year}
+        </p>
       </motion.div>
     </footer>
   );

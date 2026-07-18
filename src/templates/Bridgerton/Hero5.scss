@@ -58,6 +58,12 @@
   text-align: center;
 
   color: #fff;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0.7) 40%,
+    rgba(255, 255, 255, 0) 100%
+  );
 }
 
 .hero5__subtitle {
@@ -73,7 +79,7 @@
 
   text-transform: uppercase;
 
-  color: rgba(255, 255, 255, 0.95);
+  color: #645253;
 }
 
 .hero5__names {
@@ -89,13 +95,13 @@
 }
 
 .hero5__names span {
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Alex";
 
-  font-size: clamp(68px, 9vw, 96px);
+  font-size: 80px;
 
   font-weight: 300;
 
-  color: #eef4f8;
+  color: #809bac;
 
   text-shadow: 0 4px 25px rgba(0, 0, 0, 0.18);
 }
@@ -108,8 +114,7 @@
   font-size: 34px;
 
   font-style: italic;
-
-  color: rgba(255, 255, 255, 0.92);
+  color: #645253;
 }
 
 .hero5__date {
@@ -125,7 +130,7 @@
 
   text-transform: uppercase;
 
-  color: #f5efe7;
+  color: #645253;
 }
 
 .hero5__venue {
@@ -147,7 +152,7 @@
 
   font-style: italic;
 
-  color: #fff;
+  color: #645253;
 }
 
 .hero5__venue span {
@@ -157,7 +162,7 @@
 
   line-height: 1.6;
 
-  color: rgba(255, 255, 255, 0.9);
+  color: #645253;
 }
 
 .hero5__scroll {
@@ -191,10 +196,6 @@
     letter-spacing: 3px;
 
     margin-bottom: 14px;
-  }
-
-  .hero5__names span {
-    font-size: 62px;
   }
 
   .hero5__names small {

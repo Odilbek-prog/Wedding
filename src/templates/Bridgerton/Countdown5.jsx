@@ -49,13 +49,11 @@ function Countdown5({ invitation }) {
     return () => clearInterval(interval);
   }, []);
 
-  const locale = i18n.language === "ru" ? "ru-RU" : "uz-UZ";
+  const weddingDate = new Date(invitation.date);
 
-  const eventDate = new Date(invitation.date).toLocaleDateString(locale, {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
+  const month = t(`months.${weddingDate.getMonth()}`);
+  const day = weddingDate.getDate();
+  const year = weddingDate.getFullYear();
 
   return (
     <section className="countdown5" id="countdown">
@@ -81,7 +79,7 @@ function Countdown5({ invitation }) {
         <h2>{t("countdown5.title")}</h2>
 
         <p className="countdown5__subtitle">
-          {t("countdown5.until")} {eventDate}
+          {t("countdown5.until")} {day} {month} {year}
         </p>
 
         <div className="countdown5__timer">

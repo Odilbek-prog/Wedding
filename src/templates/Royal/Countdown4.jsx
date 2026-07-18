@@ -7,8 +7,6 @@ import "./Countdown4.scss";
 function Countdown4({ invitation }) {
   const { t, i18n } = useTranslation();
 
-  const locale = i18n.language === "ru" ? "ru-RU" : "uz-UZ";
-
   const calculateTime = () => {
     const target = new Date(invitation.date).getTime();
     const now = new Date().getTime();
@@ -49,11 +47,11 @@ function Countdown4({ invitation }) {
     return () => clearInterval(interval);
   }, []);
 
-  const eventDate = new Date(invitation.date).toLocaleDateString(locale, {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
+  const weddingDate = new Date(invitation.date);
+
+  const month = t(`months.${weddingDate.getMonth()}`);
+  const day = weddingDate.getDate();
+  const year = weddingDate.getFullYear();
 
   return (
     <section className="countdown4" id="countdown">
@@ -80,7 +78,7 @@ function Countdown4({ invitation }) {
           viewport={{ once: true }}
           transition={{ delay: 0.4 }}
         >
-          {t("countdown4.until")} {eventDate.toUpperCase()}
+          {t("countdown4.until")} {day} {month} {year}
         </motion.p>
 
         <div className="countdown4__grid">

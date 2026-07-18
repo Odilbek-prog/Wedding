@@ -19,14 +19,11 @@ function Hero3({ invitation }) {
     videoRef.current.play().catch(() => {});
   }, []);
 
-  const eventDate = new Date(invitation.date).toLocaleDateString(
-    i18n.language === "ru" ? "ru-RU" : "uz-UZ",
-    {
-      day: "numeric",
-      month: "long",
-      year: "numeric",
-    },
-  );
+  const weddingDate = new Date(invitation.date);
+
+  const month = t(`months.${weddingDate.getMonth()}`);
+  const day = weddingDate.getDate();
+  const year = weddingDate.getFullYear();
 
   return (
     <section className="hero3">
@@ -97,7 +94,7 @@ function Hero3({ invitation }) {
             delay: 5,
           }}
         >
-          {eventDate}
+          {day} {month} {year}
         </motion.p>
       </motion.div>
     </section>

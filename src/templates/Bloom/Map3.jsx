@@ -11,14 +11,11 @@ import venue from "../../assets/images/venue3.png";
 function Map3({ invitation }) {
   const { t, i18n } = useTranslation();
 
-  const eventDate = new Date(invitation.date).toLocaleDateString(
-    i18n.language === "ru" ? "ru-RU" : "uz-UZ",
-    {
-      day: "numeric",
-      month: "long",
-      year: "numeric",
-    },
-  );
+  const weddingDate = new Date(invitation.date);
+
+  const month = t(`months.${weddingDate.getMonth()}`);
+  const day = weddingDate.getDate();
+  const year = weddingDate.getFullYear();
 
   return (
     <section className="map3">
@@ -59,7 +56,9 @@ function Map3({ invitation }) {
 
           <h2>{invitation.venue}</h2>
 
-          <div className="map3__date">{eventDate}</div>
+          <div className="map3__date">
+            {day} {month} {year}
+          </div>
 
           <div className="map3__time">{invitation.time}</div>
 

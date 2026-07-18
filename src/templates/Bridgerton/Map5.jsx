@@ -8,13 +8,11 @@ import venueImage from "../../assets/images/map5top.png";
 function Map5({ invitation }) {
   const { t, i18n } = useTranslation();
 
-  const locale = i18n.language === "ru" ? "ru-RU" : "uz-UZ";
+  const weddingDate = new Date(invitation.date);
 
-  const eventDate = new Date(invitation.date).toLocaleDateString(locale, {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
+  const month = t(`months.${weddingDate.getMonth()}`);
+  const day = weddingDate.getDate();
+  const year = weddingDate.getFullYear();
 
   return (
     <section className="map5">
@@ -56,7 +54,9 @@ function Map5({ invitation }) {
 
           <p className="map5__address">{invitation.address}</p>
 
-          <span className="map5__date">{eventDate}</span>
+          <span className="map5__date">
+            {day} {month} {year}
+          </span>
 
           <span className="map5__time">{invitation.time}</span>
         </div>

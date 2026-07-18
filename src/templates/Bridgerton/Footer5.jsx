@@ -3,6 +3,12 @@ import "./Footer5.scss";
 import footer5 from "../../assets/images/footer5.png";
 
 const Footer5 = ({ invitation }) => {
+  const weddingDate = new Date(invitation.date);
+
+  const month = weddingDate.getMonth() + 1;
+  const day = weddingDate.getDate();
+  const year = weddingDate.getFullYear();
+
   return (
     <footer className="footer">
       <div className="footer__container">
@@ -18,7 +24,9 @@ const Footer5 = ({ invitation }) => {
           <h2 className="footer__names">
             {invitation.groom} & {invitation.bride}
           </h2>
-          <p className="footer__date">{invitation.date}</p>
+          <p className="footer__date">
+            {day}.{month}.{year}
+          </p>
         </div>
       </div>
     </footer>

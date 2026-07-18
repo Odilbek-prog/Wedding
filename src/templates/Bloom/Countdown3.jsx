@@ -44,14 +44,11 @@ function Countdown3({ invitation }) {
     return () => clearInterval(interval);
   }, []);
 
-  const eventDate = new Date(invitation.date).toLocaleDateString(
-    i18n.language === "ru" ? "ru-RU" : "uz-UZ",
-    {
-      day: "numeric",
-      month: "long",
-      year: "numeric",
-    },
-  );
+  const weddingDate = new Date(invitation.date);
+
+  const month = t(`months.${weddingDate.getMonth()}`);
+  const day = weddingDate.getDate();
+  const year = weddingDate.getFullYear();
 
   return (
     <section className="countdown3">
@@ -65,7 +62,7 @@ function Countdown3({ invitation }) {
         <h2 className="countdown3__title">{t("countdown3.title")}</h2>
 
         <p className="countdown3__date">
-          {t("countdown3.until")} {eventDate.toUpperCase()}
+          {t("countdown3.until")} {day} {month} {year}
         </p>
 
         <div className="countdown3__timer">

@@ -8,13 +8,11 @@ import venueImage from "../../assets/images/venue4.png";
 function Map4({ invitation }) {
   const { t, i18n } = useTranslation();
 
-  const locale = i18n.language === "ru" ? "ru-RU" : "uz-UZ";
+  const weddingDate = new Date(invitation.date);
 
-  const eventDate = new Date(invitation.date).toLocaleDateString(locale, {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
+  const month = t(`months.${weddingDate.getMonth()}`);
+  const day = weddingDate.getDate();
+  const year = weddingDate.getFullYear();
 
   return (
     <section className="map4">
@@ -52,7 +50,9 @@ function Map4({ invitation }) {
         <div className="map4__divider" />
 
         <div className="map4__datetime">
-          <span>{eventDate}</span>
+          <span>
+            {day} {month} {year}
+          </span>
 
           <span>{invitation.time}</span>
         </div>

@@ -1,11 +1,16 @@
 .rsvp5 {
   padding: 4rem 1rem;
-  background-color: #fdfaf6;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.507), rgba(255, 255, 255, 0.514)),
+    url("../../assets/images/rsvp5bg.png");
+
+  background-size: cover;
+  background-position: center;
   font-family: "Playfair Display", serif;
   width: 100%;
   margin: 0 auto;
   text-align: center;
-  color: #4a3737;
+  color: #83606b;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,20 +19,20 @@
     font-size: 2.5rem;
     font-weight: 500;
     margin-bottom: 0.5rem;
+    font-style: italic;
   }
 
   &__subtitle {
     font-size: 1.1rem;
     font-style: italic;
     margin-bottom: 3rem;
-    color: #5c4d4d;
   }
 
   &__form {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    max-width: 500px;
+    width: 80%;
   }
 
   &__group {
@@ -38,7 +43,7 @@
 
   &__label {
     margin-bottom: 0.5rem;
-    font-weight: 600;
+    font-weight: 400;
     font-size: 0.9rem;
   }
 
@@ -52,7 +57,7 @@
     font-size: 1rem;
     outline: none;
     transition: border-color 0.3s ease;
-    border-radius: 15px;
+    border-radius: 8px;
 
     &:focus {
       border-color: #8c7373;
@@ -65,14 +70,15 @@
 
   &__button {
     margin-top: 1rem;
-    background: #4a3737;
+    background: #83606b;
+
     color: white;
     border: none;
     padding: 1rem;
     font-size: 1rem;
     cursor: pointer;
     transition: background 0.3s ease;
-    border-radius: 15px;
+    border-radius: 8px;
 
     &:hover {
       background: #5c4d4d;

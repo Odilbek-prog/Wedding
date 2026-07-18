@@ -8,13 +8,11 @@ import heroVideo from "../../assets/videos/hero4.mp4";
 function Hero4({ invitation }) {
   const { t, i18n } = useTranslation();
 
-  const locale = i18n.language === "ru" ? "ru-RU" : "uz-UZ";
+  const weddingDate = new Date(invitation.date);
 
-  const eventDate = new Date(invitation.date).toLocaleDateString(locale, {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
+  const month = t(`months.${weddingDate.getMonth()}`);
+  const day = weddingDate.getDate();
+  const year = weddingDate.getFullYear();
 
   return (
     <section className="hero4">
@@ -58,7 +56,7 @@ function Hero4({ invitation }) {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.8 }}
         >
-          {eventDate}
+          {day} {month} {year}
         </motion.div>
 
         <motion.a

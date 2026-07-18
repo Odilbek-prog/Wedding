@@ -8,13 +8,11 @@ import heroVideo from "../../assets/videos/hero5.mp4";
 function Hero5({ invitation }) {
   const { t, i18n } = useTranslation();
 
-  const locale = i18n.language === "ru" ? "ru-RU" : "uz-UZ";
+  const weddingDate = new Date(invitation.date);
 
-  const eventDate = new Date(invitation.date).toLocaleDateString(locale, {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
+  const month = t(`months.${weddingDate.getMonth()}`);
+  const day = weddingDate.getDate();
+  const year = weddingDate.getFullYear();
 
   return (
     <section className="hero5">
@@ -61,7 +59,7 @@ function Hero5({ invitation }) {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.95 }}
         >
-          {eventDate.toUpperCase()}
+          {day} {month} {year}
         </motion.div>
 
         <motion.div
