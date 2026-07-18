@@ -1,58 +1,29 @@
 .template-card {
-  position: relative;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
 
-  overflow: hidden;
-
-  border-radius: 30px;
-
-  aspect-ratio: 9/16;
-
-  cursor: pointer;
-
-  background: #eee;
-
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
-
-  transition: 0.45s;
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.16);
+  }
 }
 
 .template-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-
-  transition: 0.8s;
-}
-
-.template-card:hover img {
-  transform: scale(1.08);
-}
-
-.template-card::after {
-  content: "";
-
-  position: absolute;
-  inset: 0;
-
-  background: linear-gradient(transparent 20%, rgba(0, 0, 0, 0.65));
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
 }
 
 .template-card__overlay {
-  position: absolute;
-
-  inset: 0;
-
-  z-index: 2;
-
   display: flex;
-
   flex-direction: column;
-
-  justify-content: flex-end;
-
-  padding: 28px;
-
-  color: white;
+  gap: 20px;
+  padding: 15px;
 }
 
 .template-card h3 {
@@ -61,54 +32,22 @@
   font-family: "Cormorant Garamond", serif;
 
   margin-bottom: 22px;
+  color: rgb(66, 66, 66);
+  font-weight: 400;
 }
 
 .template-card__buttons {
   display: flex;
-
-  gap: 14px;
+  justify-content: space-between;
 }
-
-.template-card button,
-.template-card a {
-  flex: 1;
-
-  height: 52px;
-
-  border-radius: 999px;
-
-  display: flex;
-
-  justify-content: center;
-
-  align-items: center;
-
-  text-decoration: none;
-
-  font-weight: 600;
-
-  transition: 0.35s;
+.template-card__btn {
+  color: black;
+  &:hover {
+    color: rgb(80, 80, 80);
+  }
 }
-
-.template-card button {
-  background: #b68a54;
-
-  border: none;
-
-  color: white;
-}
-
-.template-card a {
-  background: rgba(255, 255, 255, 0.18);
-
-  backdrop-filter: blur(14px);
-
-  border: 1px solid rgba(255, 255, 255, 0.25);
-
-  color: white;
-}
-
-.template-card button:hover,
-.template-card a:hover {
-  transform: translateY(-4px);
+@media (max-width: 576px) {
+  .template-card {
+    width: 90%;
+  }
 }

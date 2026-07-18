@@ -27,7 +27,7 @@ function TemplateCard({ template }) {
           </a>
 
           <a
-            href="https://t.me/normuxamedov"
+            href="https://t.me/aekeym"
             target="_blank"
             rel="noreferrer"
             className="template-card__btn"
