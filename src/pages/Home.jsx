@@ -2,19 +2,16 @@ import { useTranslation } from "react-i18next";
 
 import templates from "../data/templates";
 import TemplateCard from "../components/TemplateCard/TemplateCard";
+import HomeHero from "../components/HomeHero/HomeHero";
 
 function Home() {
   const { t } = useTranslation();
 
   return (
     <>
-      <section className="home-hero">
-        <h1>{t("home.title")}</h1>
+      <HomeHero />
 
-        <p>{t("home.description")}</p>
-      </section>
-
-      <section className="templates">
+      <section className="templates" id="templates">
         <h2>{t("home.templates")}</h2>
 
         <div className="templates-grid">
