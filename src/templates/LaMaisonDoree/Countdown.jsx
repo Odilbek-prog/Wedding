@@ -1,14 +1,31 @@
 import { motion } from "framer-motion";
 import Countdown from "react-countdown";
 import { useTranslation } from "react-i18next";
+import columnleft from "../../assets/images/column-left.png";
+import columnright from "../../assets/images/column-right.png";
 
 import "./Countdown.scss";
 
 function CountdownSection({ invitation }) {
   const { t } = useTranslation();
+  const weddingDate = new Date(invitation.date);
+
+  const month = t(`months.${weddingDate.getMonth()}`);
+  const day = weddingDate.getDate();
+  const year = weddingDate.getFullYear();
 
   return (
     <section className="countdown">
+      <img
+        className="countdown__column countdown__column-left"
+        src={columnleft}
+        alt="columnleft"
+      />
+      <img
+        className="countdown__column countdown__column-right"
+        src={columnright}
+        alt="columnright"
+      />
       <motion.div
         className="countdown__header"
         initial={{ opacity: 0, y: 40 }}
@@ -16,11 +33,11 @@ function CountdownSection({ invitation }) {
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
       >
-        <span className="countdown__subtitle">{t("countdown.subtitle")}</span>
+        <h1>{t("countdown.title")}</h1>
 
-        <h2>{t("countdown.title")}</h2>
-
-        <p>{t("countdown.description")}</p>
+        <p>
+          {t("countdown.description")} {day} {month} {year}
+        </p>
       </motion.div>
 
       <Countdown
@@ -40,31 +57,30 @@ function CountdownSection({ invitation }) {
                 number: minutes,
                 label: t("countdown.minutes"),
               },
-              {
-                number: seconds,
-                label: t("countdown.seconds"),
-              },
             ].map((item, index) => (
-              <motion.div
-                key={item.label}
-                className="countdown__item"
-                initial={{ opacity: 0, y: 60 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{
-                  delay: index * 0.12,
-                }}
-                whileHover={{
-                  y: -10,
-                  scale: 1.03,
-                }}
-              >
-                <div className="countdown__number">
-                  {String(item.number).padStart(2, "0")}
-                </div>
+              <>
+                <motion.div
+                  key={item.label}
+                  className="countdown__item"
+                  initial={{ opacity: 0, y: 60 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    delay: index * 0.12,
+                  }}
+                  whileHover={{
+                    y: -10,
+                    scale: 1.03,
+                  }}
+                >
+                  <div className="countdown__number">
+                    {String(item.number).padStart(2, "0")}
+                  </div>
 
-                <div className="countdown__label">{item.label}</div>
-              </motion.div>
+                  <div className="countdown__label">{item.label}</div>
+                </motion.div>
+                <hr className="countdown__hr" />
+              </>
             ))}
           </div>
         )}

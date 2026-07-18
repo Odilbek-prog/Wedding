@@ -2,33 +2,17 @@ import { motion } from "framer-motion";
 import { FaChevronDown } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 
-import topFlower from "../../assets/images/flower-top.png";
-import bottomFlower from "../../assets/images/flower-bottom.png";
-
 import "./Hero.scss";
 
 function Hero({ invitation }) {
   const { t, i18n } = useTranslation();
 
-  const locale = i18n.language === "ru" ? "ru-RU" : "uz-UZ";
-
   const weddingDate = new Date(invitation.date);
 
-  const month = weddingDate.toLocaleDateString(locale, {
-    month: "long",
-  });
-
-  const day = weddingDate.toLocaleDateString(locale, {
-    day: "numeric",
-  });
-
-  const year = weddingDate.toLocaleDateString(locale, {
-    year: "numeric",
-  });
-
-  const weekday = weddingDate.toLocaleDateString(locale, {
-    weekday: "long",
-  });
+  const month = t(`months.${weddingDate.getMonth()}`);
+  const weekday = t(`weekdays.${weddingDate.getDay()}`);
+  const day = weddingDate.getDate();
+  const year = weddingDate.getFullYear();
 
   const scrollNext = () => {
     window.scrollTo({
@@ -36,7 +20,6 @@ function Hero({ invitation }) {
       behavior: "smooth",
     });
   };
-
   return (
     <motion.section
       className="hero"
@@ -66,32 +49,6 @@ function Hero({ invitation }) {
         }}
       />
 
-      <motion.img
-        src={topFlower}
-        className="hero__flower hero__flower--top"
-        animate={{
-          rotate: [0, 2, 0, -2, 0],
-          y: [0, -5, 0],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-        }}
-      />
-
-      <motion.img
-        src={bottomFlower}
-        className="hero__flower hero__flower--bottom"
-        animate={{
-          rotate: [180, 182, 180, 178, 180],
-          y: [0, 5, 0],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-        }}
-      />
-
       <motion.div
         className="hero__bg"
         animate={{
@@ -109,15 +66,6 @@ function Hero({ invitation }) {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
-        <motion.span
-          className="hero__invite"
-          initial={{ opacity: 0, letterSpacing: 15 }}
-          animate={{ opacity: 1, letterSpacing: 6 }}
-          transition={{ delay: 0.2, duration: 1 }}
-        >
-          {t("hero.invite")}
-        </motion.span>
-
         <motion.h1
           className="hero__names"
           initial={{ opacity: 0, y: 50 }}
@@ -131,16 +79,31 @@ function Hero({ invitation }) {
           {invitation.bride}
         </motion.h1>
 
+        <motion.span
+          className="hero__invite"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2, duration: 1 }}
+        >
+          {t("hero.invite")}
+        </motion.span>
+
         <div className="hero__dateCard">
           <div className="hero__month">{month.toUpperCase()}</div>
 
           <div className="hero__middle">
-            <span className="hero__day">{day}</span>
+            <h1 className="hero__day">{day}</h1>
 
-            <span className="hero__year">{year}</span>
+            <span className="hero__weekday">{weekday.toUpperCase()}</span>
           </div>
 
-          <div className="hero__weekday">{weekday.toUpperCase()}</div>
+          <div className="hero__year">{year}</div>
+        </div>
+
+        <div className="hero__location">
+          <span className="hero__locationtext">{t("hero.locationtext")}</span>
+          <h1 className="hero__address">{invitation.venue}</h1>
+          <span className="hero__locationtext">{invitation.time}</span>
         </div>
 
         <motion.div

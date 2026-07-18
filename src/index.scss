@@ -4,9 +4,16 @@ a {
 }
 
 @font-face {
-  font-family: "Parfumerie Script";
-  src: url("./assets/Parfumerie\ Font/ParfumerieScriptOldStyle.otf")
-    format("opentype");
+  font-family: "Edwardian";
+  src: url("./assets/fonts/edwardianscriptitc.ttf") format("opentype");
+}
+@font-face {
+  font-family: "ParfumerieScriptText";
+  src: url("./assets/fonts/ParfumerieScriptText.otf") format("opentype");
+}
+@font-face {
+  font-family: "Alex";
+  src: url("./assets/fonts/alexandrascript.ttf") format("opentype");
 }
 html {
   scroll-behavior: smooth;

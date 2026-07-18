@@ -6,6 +6,7 @@
   background: linear-gradient(180deg, #fff, #faf7f2);
 
   overflow: hidden;
+  color: #4a6251;
 }
 
 .countdown::before {
@@ -36,36 +37,21 @@
   margin: 0 auto 70px;
 }
 
-.countdown__subtitle {
-  display: inline-block;
-
-  margin-bottom: 18px;
-
-  text-transform: uppercase;
-
-  letter-spacing: 5px;
-
-  font-size: 13px;
-
-  color: #b68a54;
-}
-
-.countdown__header h2 {
-  font-family: "Cormorant Garamond", serif;
-
-  font-size: clamp(44px, 6vw, 70px);
-
-  color: #382818;
+.countdown__header h1 {
+  font-size: 50px;
+  font-family: "Alex";
+  letter-spacing: 2px;
 
   margin-bottom: 22px;
 }
 
 .countdown__header p {
-  font-size: 18px;
+  font-size: 0.875rem;
 
-  line-height: 1.8;
-
-  color: #7c6a56;
+  line-height: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: #4a6251;
 }
 
 .countdown__grid {
@@ -73,9 +59,9 @@
 
   z-index: 2;
 
-  display: grid;
-
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   gap: 28px;
 
@@ -91,14 +77,6 @@
 
   border-radius: 28px;
 
-  background: rgba(255, 255, 255, 0.75);
-
-  backdrop-filter: blur(20px);
-
-  border: 1px solid rgba(182, 138, 84, 0.18);
-
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
-
   transition: 0.35s;
   display: flex;
   flex-direction: column;
@@ -106,26 +84,12 @@
   align-items: center;
 }
 
-.countdown__item::before {
-  content: "";
-
-  position: absolute;
-
-  inset: 10px;
-
-  border-radius: 20px;
-
-  border: 1px solid rgba(182, 138, 84, 0.15);
-
-  pointer-events: none;
-}
-
 .countdown__number {
-  font-family: "Parfumerie Script", serif;
+  font-family: "Alex";
 
   font-size: clamp(54px, 5vw, 82px);
 
-  color: #b68a54;
+  color: #4a6251;
 
   line-height: 1;
 }
@@ -139,17 +103,23 @@
 
   font-size: 13px;
 
-  color: #6c5a46;
+  color: #4a6251;
 }
-
-.countdown__item:hover {
-  box-shadow: 0 25px 60px rgba(182, 138, 84, 0.18);
+.countdown__hr {
+  height: 30px;
+  color: #4a6251;
 }
-
-@media (max-width: 900px) {
-  .countdown__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.countdown__column {
+  height: 100%;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+}
+.countdown__column-left {
+  left: -50px;
+}
+.countdown__column-right {
+  right: -50px;
 }
 
 @media (max-width: 600px) {

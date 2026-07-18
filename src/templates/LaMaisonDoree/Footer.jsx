@@ -1,5 +1,8 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import footerleft from "../../assets/images/footer-left.png";
+import footercenter from "../../assets/images/footer-center.png";
+import footerright from "../../assets/images/footer-right.png";
 
 import "./Footer.scss";
 
@@ -8,6 +11,21 @@ function Footer({ invitation }) {
 
   return (
     <footer className="footer">
+      <img
+        src={footerleft}
+        alt="footerleft"
+        className="footer__curtain footer__curtain-left"
+      />
+      <img
+        src={footercenter}
+        alt="footercenter"
+        className="footer__curtain footer__curtain-center"
+      />
+      <img
+        src={footerright}
+        alt="footerright"
+        className="footer__curtain footer__curtain-right"
+      />
       <motion.div
         className="footer__content"
         initial={{ opacity: 0, y: 70 }}

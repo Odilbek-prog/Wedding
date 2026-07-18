@@ -15,9 +15,8 @@
     "tapAnywhere": "Istalgan joyga bosing"
   },
   "countdown": {
-    "subtitle": "Bizning unutilmas kunimiz yaqinlashmoqda",
-    "title": "Abadiylikkacha hisob",
-    "description": "Har bir soniya bizni birgalikdagi go'zal hayotimizning boshlanishiga yanada yaqinlashtiradi.",
+    "title": "Ortga sanoq",
+    "description": "TO'YGACHA",
     "days": "Kun",
     "hours": "Soat",
     "minutes": "Daqiqa",
@@ -38,7 +37,8 @@
     "copyright": "Hayotimizning ushbu muhim qismida biz bilan birga bo'lganingiz uchun rahmat."
   },
   "hero": {
-    "invite": "Oila a'zolari bilan birgalikda"
+    "invite": "To‘yimizni nishonlashda bizga qo‘shilib, bizga sharaf ko‘rsatishingizni so‘raymiz.",
+    "locationtext": "BO'LIB O'TADI"
   },
   "intro": {
     "subtitle": "BIZ TURMUSH QURYAPMIZ",
@@ -251,5 +251,28 @@
 
     "alertFillNames": "Iltimos, kelin va kuyov ismini kiriting!",
     "alertCreateError": "Taklifnoma yaratishda xatolik yuz berdi!"
-  }
+  },
+  "months": [
+    "Yanvar",
+    "Fevral",
+    "Mart",
+    "Aprel",
+    "May",
+    "Iyun",
+    "Iyul",
+    "Avgust",
+    "Sentabr",
+    "Oktabr",
+    "Noyabr",
+    "Dekabr"
+  ],
+  "weekdays": [
+    "Yakshanba",
+    "Dushanba",
+    "Seshanba",
+    "Chorshanba",
+    "Payshanba",
+    "Juma",
+    "Shanba"
+  ]
 }
