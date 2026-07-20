@@ -6,14 +6,12 @@ a {
 @font-face {
   font-family: "Edwardian";
   src: url("./assets/fonts/edwardianscriptitc.ttf") format("opentype");
-}
-@font-face {
-  font-family: "ParfumerieScriptText";
-  src: url("./assets/fonts/ParfumerieScriptText.otf") format("opentype");
+  unicode-range: U+0000-00FF;
 }
 @font-face {
   font-family: "Alex";
   src: url("./assets/fonts/alexandrascript.ttf") format("opentype");
+  unicode-range: U+0400-04FF;
 }
 html {
   scroll-behavior: smooth;
