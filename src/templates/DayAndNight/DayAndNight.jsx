@@ -37,7 +37,7 @@ function DayAndNight({ invitation = demoInvitation, preview = false }) {
           <Map2 invitation={invitation} />
           <DressCode2 />
           <WeddingGift2 />
-          <RSVP2 />
+          <RSVP2 invitation={invitation} />
           <Footer2 invitation={invitation} />
         </>
       )}

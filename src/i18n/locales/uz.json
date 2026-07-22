@@ -247,7 +247,9 @@
     "saving": "Saqlanmoqda...",
 
     "alertFillNames": "Iltimos, kelin va kuyov ismini kiriting!",
-    "alertCreateError": "Taklifnoma yaratishda xatolik yuz berdi!"
+    "alertCreateError": "Taklifnoma yaratishda xatolik yuz berdi!",
+    "coupleImage": "Juftlik rasmi (ixtiyoriy)",
+    "coupleImageHint": "Agar rasm tanlanmasa standart rasm ishlatiladi."
   },
   "months": [
     "Yanvar",

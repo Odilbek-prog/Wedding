@@ -15,6 +15,7 @@ function Dashboard() {
     address: "",
     map: "",
   });
+  const [file, setFile] = useState(null);
 
   const [link, setLink] = useState("");
   const [loading, setLoading] = useState(false);
@@ -31,19 +32,37 @@ function Dashboard() {
     }
 
     setLoading(true);
+
     try {
       const token = localStorage.getItem("token");
-      const res = await api.post("/invitations", form, {
+
+      const formData = new FormData();
+
+      formData.append("template", form.template);
+      formData.append("groom", form.groom);
+      formData.append("bride", form.bride);
+      formData.append("date", form.date);
+      formData.append("time", form.time);
+      formData.append("venue", form.venue);
+      formData.append("address", form.address);
+      formData.append("map", form.map);
+
+      if (file) {
+        formData.append("coupleImage", file);
+      }
+
+      const res = await api.post("/invitations", formData, {
         headers: {
           Authorization: `Bearer ${token}`,
+          "Content-Type": "multipart/form-data",
         },
       });
 
-      // Localhost o'rniga dinamik domen (Vercel uchun ham ishlaydi)
       const currentDomain = window.location.origin;
+
       setLink(`${currentDomain}/invitation/${res.data.slug}`);
     } catch (error) {
-      console.error("Xatolik:", error);
+      console.error(error);
       alert(t("dashboard.alertCreateError"));
     } finally {
       setLoading(false);
@@ -167,6 +186,21 @@ function Dashboard() {
             onChange={(e) => setForm({ ...form, map: e.target.value })}
             style={{ padding: "8px" }}
           />
+          {form.template === "day-and-night" && (
+            <div style={{ display: "grid", gap: "6px" }}>
+              <label>{t("dashboard.coupleImage")}</label>
+
+              <input
+                type="file"
+                accept="image/*"
+                onChange={(e) => setFile(e.target.files[0])}
+              />
+
+              <small style={{ color: "#777" }}>
+                {t("dashboard.coupleImageHint")}
+              </small>
+            </div>
+          )}
 
           <button
             onClick={createInvitation}

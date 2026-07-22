@@ -3,9 +3,10 @@ import { useTranslation } from "react-i18next";
 
 import "./RSVP2.scss";
 
-import couple from "../../assets/images/rsvpimg.png";
+import defaultcouple from "../../assets/images/rsvpimg.png";
 
-function RSVP2() {
+function RSVP2({ invitation }) {
+  const API_URL = "https://wedding-backend-8a8r.onrender.com";
   const { t } = useTranslation();
 
   return (
@@ -18,7 +19,11 @@ function RSVP2() {
         transition={{ duration: 1 }}
       >
         <motion.img
-          src={couple}
+          src={
+            invitation?.coupleImage
+              ? `${API_URL}${invitation.coupleImage}`
+              : couple
+          }
           alt=""
           className="rsvp2__image"
           initial={{ scale: 0.9, opacity: 0 }}
