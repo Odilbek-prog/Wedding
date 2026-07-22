@@ -22,14 +22,15 @@
 }
 
 .rsvp2__image {
-  width: 260px;
+  width: 280px;
   height: 360px;
 
   object-fit: cover;
 
-  border-radius: 50% / 35%;
+  border-radius: 50% 50% 45% 45% / 38% 38% 62% 62%;
 
-  display: block;
+  overflow: hidden;
+  margin: auto;
 }
 
 .rsvp2 h2 {
