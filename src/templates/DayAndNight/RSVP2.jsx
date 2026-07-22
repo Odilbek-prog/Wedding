@@ -22,7 +22,7 @@ function RSVP2({ invitation }) {
           src={
             invitation?.coupleImage
               ? `${API_URL}${invitation.coupleImage}`
-              : couple
+              : defaultcouple
           }
           alt=""
           className="rsvp2__image"
