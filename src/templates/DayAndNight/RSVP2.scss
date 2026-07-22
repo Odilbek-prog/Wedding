@@ -19,6 +19,9 @@
 .rsvp2__card {
   max-width: 560px;
   margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .rsvp2__image {
@@ -30,7 +33,6 @@
   border-radius: 50% 50% 45% 45% / 38% 38% 62% 62%;
 
   overflow: hidden;
-  margin: auto;
 }
 
 .rsvp2 h2 {
